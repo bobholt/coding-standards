@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Our site title and description -->
+    <title>JavaScript | Your Website</title>
+    <meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
+    <meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Output DocPad produced meta elements -->
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Shims: IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap.min.css" /><link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap-responsive.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/highlightjs-default.css" />
+</head>
+<body>
+    <!-- Markup -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">Code Standards</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        
+                            <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                <a href="/pages/workflow" property="dc:title">Workflow</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/html" class="">
+                                <a href="/pages/html" property="dc:title">HTML</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/css" class="">
+                                <a href="/pages/css" property="dc:title">CSS</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/javascript" class="active">
+                                <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/testing" class="">
+                                <a href="/pages/testing" property="dc:title">Testing</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/performance" class="">
+                                <a href="/pages/performance" property="dc:title">Performance</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                <a href="/pages/microformats" property="dc:title">Microformats</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/seo" class="">
+                                <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                <a href="/pages/appendices" property="dc:title">Appendices</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id="content" class="content">
+
+            <div class="row">
+
+                <div class="span9">
+
+                    <article id="page" class="page">
+    <h1>JavaScript</h1>
+    <div class="page-content"><h2>Libraries</h2>
+<p>We primarily develop new applications in <a href="http://api.jquery.com/">jQuery</a>, though the thorough knowledge and wise usage of plain JavaScript is <em>strongly</em> recommended.</p>
+<p>Additional libraries to be familiar with include:</p>
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/">Backbone.js</a></li>
+<li><a href="http://documentcloud.github.com/underscore/">underscore.js</a> (required by Backbone) <mark>(the Underscore compatability build of <a href="http://lodash.com/">Lo-Dash</a> is currently preferred for its better performance and stability.)</mark></li>
+<li><a href="http://requirejs.org/">RequireJS</a></li>
+</ul>
+<h2>Code Organization</h2>
+<p>99.9% of code should be housed in external javascript files. These files should be included at the END of the BODY tag for maximum page performance. There is no need to use the language or type attributes in the <code>&lt;script&gt;</code> tag (unless you&#39;re not writing JavaScript). It is the server, not the script tag, that determines the MIME type, and the browser assumes JavaScript by default for script tags.</p>
+<pre class="highlighted"><code class="xml"><span class="tag">&lt;<span class="title">body</span>&gt;</span>
+
+    <span class="comment">&lt;!-- page code --&gt;</span>
+
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"myfile.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></pre>
+<h3>Third-party Scripts</h3>
+<p>Third-party scrips should be maintained in separate files within a <code>vendor</code> directory inside your <code>js</code> directory. These will be concatenated and minified as part of the build process. Already-minified scripts should end with the extension <code>.min.js</code></p>
+<pre class="highlighted"><code class="brainfuck"><span class="literal">-</span><span class="comment">app</span>
+<span class="literal">-</span><span class="comment">css</span>
+<span class="literal">-</span><span class="comment">img</span>
+<span class="literal">-</span><span class="comment">js</span>
+<span class="comment">app</span>.<span class="comment">js</span>
+<span class="literal">-</span><span class="comment">vendor</span>
+<span class="comment">plugin1</span>.<span class="comment">js</span>
+<span class="comment">plugin2</span>.<span class="comment">min</span>.<span class="comment">js</code></pre>
+<h3>Application Code</h3>
+<p><strong>app.js</strong> is meant to hold your site or application code. This isn&#39;t always the best solution as larger teams and or larger, more feature rich projects should break application code into module or feature-specific files. In these situations, however, app.js can still be used for your &quot;main&quot; page initialization script. For smaller sites, simpler applications, and initial prototyping, however, a single well-organized app.js file can make sense.</p>
+<p>Always include a table of contents at the top of your js files when they combine multiple modules or pieces of functionality. For example:</p>
+<pre class="highlighted"><code class="avrasm">// app<span class="preprocessor">.js</span> - Complete site code
+// Contents:
+//   MYAPP<span class="preprocessor">.common</span> - global functionality used throughout the site
+//   MYAPP<span class="preprocessor">.pageOne</span> - functionality unique to myapp<span class="preprocessor">.com</span>/pageOne
+
+var MYAPP = window<span class="preprocessor">.MYAPP</span> = window<span class="preprocessor">.MYAPP</span> || {}<span class="comment">;</span>
+
+MYAPP<span class="preprocessor">.common</span> = (function(){&amp;hellip<span class="comment">;}());</span>
+
+MYAPP<span class="preprocessor">.pageOne</span> = (function(){&amp;hellip<span class="comment">;}());</span></code></pre>
+<h3>Source Code Organization</h3>
+<p>Organize your code using:</p>
+<ul>
+<li>AMD modules loadable through Require.js. This can include the patterns below.</li>
+<li>the <a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module Pattern</a> (preferably using <a href="http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">DOM-based routing</a> when no other solution (e.g. Backbone) is applicable)</li>
+<li><a href="http://mckoss.com/jscript/object.htm">Objects with constructors</a></li>
+</ul>
+<h3>Configuration Variables</h3>
+<p>Constants or configuration variables (like animation durations, etc.) should be declared at the top of the applicable file and well-commented.</p>
+<h2>Modifying Built-ins</h2>
+<h3>Object.prototype</h3>
+<p>Only add methods to Object.prototype if <strong>all three</strong> of the following conditions are met:</p>
+<ol>
+<li>The method is a shim for methods expected to be supported consistently in future implementations of JavaScript (such as <code>Object.prototype.keys()</code>)</li>
+<li>You check that the method does not already exist in the current implementation.</li>
+<li>You clearly document the shim.</li>
+</ol>
+<pre class="highlighted"><code class="haskell">// <span class="type">Adding</span> <span class="type">ES5</span> implementation <span class="keyword">of</span> <span class="type">Object</span>.keys()
+<span class="title">if</span> ( <span class="typedef">typeof <span class="type">Object</span>.prototype.keys !== 'function' ) <span class="container">{
+
+    <span class="type">Object</span>.<span class="title">prototype</span>.<span class="title">keys</span> = <span class="title">function</span>() {
+
+        // <span class="title">implementation</span>...
+
+    }</span>;</span>
+
+}</code></pre>
+<p>Note that jQuery does not support altering the global object. If you alter the global object and experience jQuery bugs as a result, you will need to consider a different tactic.</p>
+<h2>Syntax Best Practices</h2>
+<h3>Functional Programming</h3>
+<p>Create functions which can be generalized, take parameters, and return values. This allows for substantial code reuse and, when combined with includes or external scripts, can reduce the overhead when scripts need to change. For example, instead of hard coding a pop-up window with window size, options, and url, consider creating a function which takes size, url, and options as variables.</p>
+<p>When in doubt, return <code>this</code>. Returning the context object allows chaining of methods.</p>
+<h3>Global Variables</h3>
+<p>Minimize global variables - the fewer globals you create, the better. Generally one, for your application namespace, is a good number. Zero, through using an AMD solution, is even better. When specifying any global variable, clearly identify it by explicitly attaching it to window, so developers after you know that you knew what you were doing.</p>
+<pre class="highlighted"><code class="r">window.globalVar = { <span class="keyword">...</span> }</code></pre>
+<p>Note that after the declaration, you should refer to globals without the <code>window.</code> declaration, which actually takes longer to resolve in all current browsers.</p>
+<p>All other variables should be declared inside functions using the <code>var</code> keyword or as part of an object literal.</p>
+<h3>Local Variable Declaration and Assignment</h3>
+<p>Assignments in a declaration should always be on their own line with their own <code>var</code> keyword at the top of the function for easier code maintenance (See <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">this discussion</a>). Declarations that don&#39;t have an assignment should be assigned to null. For example:</p>
+<pre class="highlighted"><code class="nginx"><span class="title">var</span> a = null;
+<span class="title">var</span> b = null;
+<span class="title">var</span> c = null;
+<span class="title">var</span> test = <span class="built_in">true</span>;
+<span class="title">var</span> test2 = <span class="built_in">false</span>;</code></pre>
+<h3>Semicolons</h3>
+<p>Variable assignments should always have a semicolon after them.</p>
+<p>Semicolons should always be followed by an endline.</p>
+<p>Always use semicolons. Automatic semicolon insertion is intended to fix the <strong>error</strong> of missing semicolons. Relying on ASI can cause subtle, hard-to-debug problems. Don&#39;t do it. You&#39;re better than that.</p>
+<h3>Equality and type checks</h3>
+<p>Strict equality checks (<code>===</code>) should always be used in favor of <code>==</code> except when checking against null (the loose equality can be useful in this situation, as it will match both null and undefined).</p>
+<ul>
+<li>String: <code>typeof object === &#39;string&#39;</code></li>
+<li>Number: <code>typeof object === &#39;number&#39;</code></li>
+<li>Boolean: <code>typeof object === &#39;boolean&#39;</code></li>
+<li>Object: <code>typeof object === &#39;object&#39;</code></li>
+<li>Plain Object: <code>jQuery.isPlainObject(object)</code></li>
+<li>Function: <code>jQuery.isFunction(object)</code> or <code>typeof object === &#39;function&#39;</code></li>
+<li>Array: <code>jQuery.isArray(object)</code></li>
+<li>Element: <code>object.nodeType</code></li>
+<li>null: <code>object === null</code></li>
+<li>null or undefined: <code>object == null</code></li>
+<li>undefined:<ul>
+<li>Global Variables: <code>typeof variable === &#39;undefined&#39;</code></li>
+<li>Local Variables: <code>variable === undefined</code></li>
+<li>Properties: <code>object.prop === undefined</code></li>
+</ul>
+</li>
+</ul>
+<h3>RegExp</h3>
+<p>All RegExp operations should be done using <code>.test()</code> and <code>.exec()</code>. &quot;string&quot;.match() should not be used.</p>
+<h3>Strings</h3>
+<p>Strings should always use <mark>single-quotes instead of double-quotes. This is helpful when creating strings that include HTML.</mark></p>
+<h3>Loops</h3>
+<p><code>for-in</code> loops are often incorrectly used to loop over the elements in an Array. This is very error prone because it does not loop from 0 to length - 1 but over all the keys present in the object and its prototype chain. Always use normal <code>for</code> loops when using arrays.</p>
+<h3>document.write()</h3>
+<p>Don&#39;t use document.write().</p>
+<h3>eval()</h3>
+<p>The <code>eval</code> function has historically been the most misused feature of JavaScript. Avoid it.</p>
+<p><code>eval</code> has aliases. Do not use the Function constructor. Do not pass strings to <code>setTimeout</code> or <code>setInterval</code>.</p>
+<h3>parseInt()</h3>
+<p>Always specify the radix parameter in parseInt(). This avoids unexpected parsing into non-decimal numbers. A common example is when parsing strings from date form fields:</p>
+<pre class="highlighted"><code class="coffeescript"><span class="regexp">//</span> With the radix
+parseInt(<span class="string">'09'</span>, <span class="number">10</span>) === <span class="number">9</span>;
+
+<span class="regexp">//</span> Without the radix
+<span class="regexp">//</span> The leading zero forces <span class="keyword">this</span> into base-<span class="number">8</span>
+parseInt(<span class="string">'09'</span>) === <span class="number">0</span>;</code></pre>
+<h2>Unit Testing</h2>
+<p>Projects <em>must</em> include some form of unit, reference, implementation or functional testing. Use case demos DO NOT QUALIFY as &quot;tests&quot;.</p>
+<p>Our current preferred unit testing suite is <a href="http://visionmedia.github.com/mocha/">Mocha</a> with <a href="http://sinonjs.org/">Sinon</a> and <a href="http://chaijs.com/">Chai</a>.</p>
+<h2>Comments and Documentation</h2>
+<h3>Comments</h3>
+<p>Comment your code! It helps reduce time spent troubleshooting JavaScript functions. An occasional nugget of humor might be appreciated. Frustrations and resentments will not.</p>
+<p>It is important that comments be kept up-to-date. Erroneous comments can make programs even harder to read and understand.</p>
+<p>Make comments meaningful. Focus on what is not immediately visible. Don&#39;t waste the reader&#39;s time with stuff like this:</p>
+<pre class="highlighted"><code class="sql">i = 0; // <span class="operator"><span class="keyword">Set</span> i <span class="keyword">to</span> zero.</code></pre>
+<p>Generally use line comments. Save block comments for formal documentation and for commenting out large blocks of quote. Large commented-out blocks of quote should be removed when no longer needed. They only serve to confuse later developers as to whether their functionality was permanently removed or planned to be implemented in the future.</p>
+<p>Single line comments should always be on their own line and be above the line they reference. Additionally there should be an extra endline above it. For example:</p>
+<pre class="highlighted"><code class="applescript">var <span class="keyword">some</span> = <span class="string">"stuff"</span>;
+
+// Loop <span class="keyword">over</span> <span class="keyword">the</span> <span class="keyword">first</span> ten elements <span class="keyword">of</span> <span class="keyword">the</span> array
+<span class="keyword">for</span> ( var i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ ) {}</code></pre>
+<h3>Documentation</h3>
+<p>Documentation should follow <mark><a href="http://yui.github.com/yuidoc/">YUIDoc</a></mark> structure. Style information can be found on <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments">Google&#39;s Style Guide</a> and the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">JavaDoc</a> style guide is a useful resource on how to write well-formed doc comments. A syntax reference is available on the <a href="http://yui.github.com/yuidoc/syntax/index.html">YUIDoc site</a>.</p>
+<p>Avoid sentence fragments. Start sentences with a properly capitalized word, and end them with punctuation.</p>
+<h2>Feature Detection</h2>
+<p>Don&#39;t rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.org/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>).</p>
+<p><a href="http://modernizr.com/">Modernizr</a> makes this very easy, and a build of it should be in every project, if only to provide HTML5 shimming.</p>
+<h2>Deploying to Production</h2>
+<p>All JavaScript is required to pass <a href="http://www.jshint.com/">JSHint</a> before moving to production. See <a href="appendices.html#a">Appendix A</a> for a list of options we include by default.</p>
+<p>Use automatic minification. <a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a> or <a href="https://github.com/mishoo/UglifyJS">UglifyJS</a> as part of an automated build process is preferred. Don&#39;t manually minify. With the exception of the traditional <code>i</code>, etc. in <code>for</code> loops, variable names in your code should be long enough to be meaningful.</p>
+<h2>Event Delegation</h2>
+<p>When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.</p>
+<p>jQuery&#39;s <a href="http://api.jquery.com/delegate"><code>delegate()</code></a> (jQuery 1.4) should be used over <a href="http://api.jquery.com/live"><code>live()</code></a> for performance reasons. As of jQuery 1.7 <a href="http://api.jquery.com/on/"><code>on()</code></a> and <a href="http://api.jquery.com/off/"><code>off()</code></a> should be used exclusively.</p>
+<h2>Exception Handling</h2>
+<p>Without custom exceptions, returning error information from a function that also returns a value can be tricky, not to mention inelegant. Feel free to throw custom exceptions when appropriate.</p>
+<pre class="highlighted"><code class="r">var loadException = <span class="keyword">function</span>(message) {
+    this.message = message;
+    this.name = <span class="string">"Load Exception"</span>;
+}
+
+var mightThrow = <span class="keyword">function</span>() {
+    <span class="keyword">if</span> (something) {
+        // <span class="keyword">...</span>
+    } <span class="keyword">else</span> <span class="keyword">if</span> (somethingElse) {
+        // <span class="keyword">...</span>
+    } <span class="keyword">else</span> {
+        throw new loadException(<span class="string">"Data Not Loading"</span>);
+    }
+};</code></pre>
+<p>Mitigate errors by handling all possible cases. <code>try</code>/<code>catch</code> blocks should not be used in performance-critical code, as the catch block executes in an additional context layer.</p>
+<h2>Debugging</h2>
+<p>Even with the best of validators, browser quirks will inevitably cause issues. There are several invaluable tools which will help to refine code integrity and loading speed. It is important that you have all of these tools available to you, despite the browser you primarily use for development. We recommend developing for Google Chrome first, then Firefox, Safari, and Opera, with additional tweaks via conditional comments just for Internet Explorer. The following is a list of helpful debuggers and speed analyzers...</p>
+<ul>
+<li><strong>Firefox</strong>: <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a></li>
+<li><strong>Safari</strong>: <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/UsingtheWebInspector/UsingtheWebInspector.html">Web Inspector</a></li>
+<li><strong>Google Chrome</strong>: <a href="http://google.com/chrome/intl/en/webmasters-faq.html#tools">Developer Tools</a></li>
+<li><strong>Opera</strong>: <a href="http://opera.com/dragonfly/">Dragonfly</a></li>
+<li><strong>Internet Explorer 6-7</strong>: <a href="http://microsoft.com/downloads/details.aspx?familyid=E59C3964-672D-4511-BB3E-2D5E1DB91038">Developer Toolbar</a></li>
+<li><strong>Internet Explorer 8-10</strong>: <a href="http://msdn.microsoft.com/en-us/library/dd565625%28v=VS.85%29.aspx">Developer Tools</a></li>
+</ul>
+<h2>Matters of Style</h2>
+<h3>Naming Conventions</h3>
+<p>Naming Conventions in JavaScript are just that: conventions. There is nothing in JavaScript that requires these conventions, but these have emerged over time as a best practice, and should be observed.</p>
+<h4>Files</h4>
+<p>Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - (dash) or _ (underscore) <mark>(we prefer dashes to underscores)</mark>. For example, <code>myfile.js</code> or <code>my-file.js</code>.</p>
+<h4>Variables and Functions</h4>
+<p>Variables and functions should be lower camel-case. That is, they should start with a lowercase letter, and subsequent words in the name should be capitalized. For example, <code>myFunction()</code> or <code>myReallyLongFunction()</code></p>
+<p>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>. All Boolean variables should start with &quot;is&quot;. Test for positive conditions.</p>
+<pre class="highlighted"><code class="avrasm">isValid = (test<span class="preprocessor">.value</span> &gt;= <span class="number">4</span> &amp;&amp; test<span class="preprocessor">.success</span>)<span class="comment">;</span></code></pre>
+<h5>Constructors</h5>
+<p>Constructor functions should use upper camel case. JavaScript issues neither a compile-time warning nor a run-time warning if a required new is omitted. Bad things can happen if <code>new</code> is not used, so the capitalization convention is the only defense we have.</p>
+<pre class="highlighted"><code class="r">var MyConstructor = <span class="keyword">function</span>(){<span class="keyword">...</span>};
+
+var instance = new MyConstructor();</code></pre>
+<h5>Constants</h5>
+<p>Use all-caps separated by underscores for variables you would consider to be constant. Never use the <code>const</code> keyword because IE doesn&#39;t parse it.</p>
+<pre class="highlighted"><code class="nginx"><span class="title">var</span> DAY_IN_WEEK = <span class="number">7</span>;</code></pre>
+<h5>Private variables</h5>
+<p>&quot;Private&quot; variable and function names should start with an underscore. Since JavaScript doesn&#39;t have true &quot;private&quot; properties, this is simply an indicator to developers to neither change nor rely on any undocumented behavior of this property.</p>
+<pre class="highlighted"><code class="r">var _dontTouchMe = <span class="keyword">function</span>() {<span class="keyword">...</span>}</code></pre>
+<h3>Whitespace</h3>
+<p>Use <mark><strong>two spaces</strong></mark> to indent your code.</p>
+<p>Use liberal spacing in your code for readability. The minification process will take care of removing it.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+<span class="keyword">if</span>(blah===<span class="string">'foo'</span>){
+
+    foo(<span class="string">'bar'</span>,<span class="string">'baz'</span>,{zoo:<span class="number">1</span>});
+
+}
+
+<span class="comment">// YES:</span>
+<span class="keyword">if</span> ( blah === <span class="string">'foo'</span> ) {
+
+    foo( <span class="string">'bar'</span>, <span class="string">'baz'</span>, {zoo: <span class="number">1</span>} );
+
+}</code></pre>
+<h3>Additional Whitespace Rules</h3>
+<p>Opening braces are always prefixed by a space.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+<span class="keyword">if</span> (test){
+
+<span class="comment">// YES:</span>
+<span class="keyword">if</span> (test) {</code></pre>
+<p>Commas and colons are always followed by a space.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+<span class="keyword">var</span> arr = [ <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> ];
+
+<span class="comment">// YES:</span>
+<span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ];</code></pre>
+<p>Don&#39;t use tabs inside a line.</p>
+<pre class="highlighted"><code class="cs"><span class="keyword">var</span> a = <span class="keyword">true</span>;
+
+<span class="comment">// yayy</span>
+<span class="keyword">var</span> c = <span class="keyword">false</span>;
+
+<span class="comment">// grrr</span>
+<span class="keyword">var</span> b    = <span class="keyword">false</span>;</code></pre>
+<p>Lines with nothing on them should have no whitespace.</p>
+<p>There should be no whitespace at the end of a line. Set your IDE/text editor to trim whitespace at the end of lines.</p>
+<p>Always include extra spaces around the arguments.</p>
+<pre class="highlighted"><code class="erlang"><span class="function"><span class="title">foo</span><span class="params">( true )</span>;
+
+<span class="title">foo</span><span class="params">( 'blah' )</span>;</code></pre>
+<p>Exception: no spaces is allowed if you&#39;re already inside of another function call.</p>
+<pre class="highlighted"><code class="erlang">// <span class="variable">Allowed</span>:
+<span class="function"><span class="title">foo</span><span class="params">( <span class="function_name">bar</span>(true) )</span>;</code></pre>
+<p>Exception: Functions, object literals, and array literals go snug to front and back of the parentheses - but ONLY when it&#39;s the only argument.</p>
+<pre class="highlighted"><code class="erlang">// <span class="variable">Allowed</span>:
+<span class="function"><span class="title">foo</span><span class="params">(<span class="keyword">fun</span><span class="function_name">ction</span>() <span class="tuple">{ }</span>);
+
+<span class="function_name">foo</span>([   ]);
+
+<span class="function_name">foo</span>(<span class="tuple">{   }</span>);</code></pre>
+<p>Exception: <em>Multi-line</em> function/object/array literals go snug at end (and at start ONLY if the only argument).</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+foo( <span class="keyword">true</span>, { blah: <span class="string">'baz'</span> });
+
+<span class="comment">// YES:</span>
+foo( <span class="keyword">true</span>, {
+
+blah: <span class="string">"baz"</span>
+
+});</code></pre>
+<p>Empty functions don&#39;t need filler spaces.</p>
+<pre class="highlighted"><code class="erlang"><span class="function"><span class="title">foo</span><span class="params">()</span>;</code></pre>
+<p>Empty objects and arrays don&#39;t need filler spaces.</p>
+<pre class="highlighted"><code class="json">[]
+{}</code></pre>
+<h3>Code Blocks</h3>
+<p><code>if</code>/<code>else</code>/<code>for</code>/<code>while</code>/<code>try</code> always have braces and always go on multiple lines.
+Braces should always be used on blocks.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+<span class="keyword">if</span> ( <span class="keyword">true</span> )
+blah();
+
+<span class="comment">// YES:</span>
+<span class="keyword">if</span> ( <span class="keyword">true</span> ) {
+    blah();
+}</code></pre>
+<p>Don&#39;t put statements on the same line as a conditional.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+<span class="keyword">if</span> ( <span class="keyword">true</span> ) <span class="keyword">return</span>;
+<span class="keyword">if</span> ( <span class="keyword">true</span> ) blah();
+
+<span class="comment">// YES:</span>
+<span class="keyword">if</span> ( <span class="keyword">true</span> ) {
+    <span class="keyword">return</span>;
+}
+
+<span class="keyword">if</span> ( <span class="keyword">true</span> ) {
+    blah();
+}</code></pre>
+<p><code>else</code>/<code>else if</code>/<code>catch</code> go on the same line as the brace.</p>
+<pre class="highlighted"><code class="erlang"><span class="function"><span class="title">if</span> <span class="params">( blah )</span> {
+    <span class="title">baz</span><span class="params">()</span>;
+} <span class="title">else</span> {
+    <span class="title">baz2</span><span class="params">()</span>;
+}</code></pre>
+<p>Exception: else if is allowed, a else { } is not required</p>
+<pre class="highlighted"><code class="cs">} <span class="keyword">else</span> <span class="keyword">if</span> ( test ) {
+    blah();
+}
+
+<span class="comment">// Not needed:</span>
+} <span class="keyword">else</span> {
+    <span class="keyword">if</span> ( test ) {
+        blah();
+    }
+}</code></pre>
+<p>Don&#39;t use ternary operators instead of if/else statements except in object literals.</p>
+<pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
+someVar = logicalTest ? <span class="string">'ifTrue'</span> : <span class="string">'ifFalse'</span>;
+
+<span class="comment">// YES:</span>
+<span class="keyword">if</span> ( logicalTest ) {
+
+    someVar = <span class="string">'ifTrue'</span>;
+
+} <span class="keyword">else</span> {
+
+    someVar = <span class="string">'ifFalse'</span>;
+
+}
+
+<span class="comment">// Acceptable:</span>
+<span class="keyword">var</span> obj = {
+
+    param: logicalTest ? <span class="string">'ifTrue'</span> : <span class="string">'ifFalse'</span>
+
+};</code></pre>
+<p><a class="btn" href="css.html">Previous: CSS</a>
+<a class="btn" href="testing.html">Next: Testing</a></p>
+</div>
+</article>
+
+                </div>
+
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                                
+                                    <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                        <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                        <a href="/pages/workflow" property="dc:title">Workflow</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/html" class="">
+                                        <a href="/pages/html" property="dc:title">HTML</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/css" class="">
+                                        <a href="/pages/css" property="dc:title">CSS</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/javascript" class="active">
+                                        <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/testing" class="">
+                                        <a href="/pages/testing" property="dc:title">Testing</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                        <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/performance" class="">
+                                        <a href="/pages/performance" property="dc:title">Performance</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                        <a href="/pages/microformats" property="dc:title">Microformats</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/seo" class="">
+                                        <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                        <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                        <a href="/pages/appendices" property="dc:title">Appendices</a>
+                                    </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <footer>
+            <p>&copy; FMR LLC 2013</p>
+            <p style="float:right;">
+                This website was last updated at 2013-02-13T01:50:29.210Z
+            </p>
+        </footer>
+    </div><!-- /container -->
+
+    <!-- Scripts -->
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jquery.js"></script><script defer="defer"  src="/vendor/log.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/vendor/modernizr.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>

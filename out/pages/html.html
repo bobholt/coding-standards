@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Our site title and description -->
+    <title>HTML | Your Website</title>
+    <meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
+    <meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Output DocPad produced meta elements -->
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Shims: IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap.min.css" /><link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap-responsive.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/highlightjs-default.css" />
+</head>
+<body>
+    <!-- Markup -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">Code Standards</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        
+                            <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                <a href="/pages/workflow" property="dc:title">Workflow</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/html" class="active">
+                                <a href="/pages/html" property="dc:title">HTML</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/css" class="">
+                                <a href="/pages/css" property="dc:title">CSS</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/testing" class="">
+                                <a href="/pages/testing" property="dc:title">Testing</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/performance" class="">
+                                <a href="/pages/performance" property="dc:title">Performance</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                <a href="/pages/microformats" property="dc:title">Microformats</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/seo" class="">
+                                <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                <a href="/pages/appendices" property="dc:title">Appendices</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id="content" class="content">
+
+            <div class="row">
+
+                <div class="span9">
+
+                    <article id="page" class="page">
+    <h1>HTML</h1>
+    <div class="page-content"><p>HTML is the structure and content of the web. It does not define the look and feel of a document, but its semantic structure. We will define formatting and style rules in raw files that use HTML, including template files.</p>
+<p>We will follow HTML5 as our markup standard we will follow. We don&#39;t believe that there is any arguable reason to use XHTML. HTML5 should be the baseline for any new project. Its doctype works in all browsers, and older browsers such as IE6 can be shimmed to support new HTML5 elements.</p>
+<h2>HTML5 Boilerplate</h2>
+<p>The <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> offers a quick and easy template for any HTML5 site. It is the combined result of hundreds of developers contributing knowledge and best practices. You should strongly consider using it as the basis for any new project.</p>
+<h2>Doctype</h2>
+<p>Only doctypes which trigger browser standards modes should be used. Quirks mode is not acceptable. The HTML5 doctype works in all browsers, triggers standards mode, and removes the need to use CDATA blocks for inline JavaScript (which you should avoid in most cases).</p>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p>It&#39;s that easy.</p>
+<h2>Character Encoding</h2>
+<p>Your HTML should be delivered as UTF-8 for best support of international character sets. The server should ensure this is set in the HTTP header sent with the file, but your markup should also include a <code>meta</code> element in the head of the document.</p>
+<p>In HTML5:<br>
+  <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
+<p>This element should be placed immediately after the <code>&lt;head&gt;</code> element in an attempt to avoid re-rendering in IE. (See <a href="http://support.microsoft.com/kb/928847">http://support.microsoft.com/kb/928847</a>.)</p>
+<p>When using UTF-8, there is no need to use entity references such as <code>&amp;mdash;</code> or <code>&amp;rdquo;</code>, assuming the file editors and all team members are also using UTF-8. The remaining exception to this is for characters that have special meaning in HTML such as <code>&amp;lt;</code>, <code>&amp;amp;</code>, and <code>&amp;nbsp;</code>.</p>
+<p>For more information: <a href="http://www.w3.org/International/tutorials/tutorial-char-enc/"><cite>W3C: Handling character encodings in HTML and CSS</cite></a>.</p>
+<h2>Viewport Meta Element</h2>
+<p>The viewport meta element should be constructed in this manner:</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</code></p>
+<p>This configuration sets the content to match the width of the device, while still allowing the user to zoom in or out to their preferred level. You may see developers use <code>maximum-scale=&quot;1&quot;</code>. This prohibits the user from zooming in on a mobile device, and for accessibility, should never be used.</p>
+<h2>Validation</h2>
+<p>All HTML markup should be run through the <a href="http://validator.w3.org/">W3C validator</a>. 100% validity is not necessary, but you should understand why your code does not pass, and make a conscious choice for that outcome.</p>
+<h2>Comments</h2>
+<p>Commenting HTML is not as important as JavaScript, but it can be useful for delineating sections. A recommended practice is to place an comment on closing tags to indicate which element is being closed. For example:</p>
+<pre class="highlighted"><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"my-div"</span>&gt;</span>
+    ...
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="comment">&lt;!-- end div.my-div --&gt;</span></code></pre>
+<h2>Conditional Comments</h2>
+<p>Internet Explorer prior to version 10 recognizes conditional comments, which allows the conditional loading of resources (such as stylesheets or script files) based on the version of IE the client is using.</p>
+<p>Every effort should be made to construct a fully-functional and well-rendered site prior to the use of conditional comments. Conditionals should be something of a last resort for browser compatibility.</p>
+<h2>Semantic Markup</h2>
+<p>HTML elements should be chosen in such a way as to represent the semantic content of the document. Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons. This is a longer conversation than we will tackle at the present time, but here are a few quick pointers:</p>
+<ul>
+<li>Never ever use tables for page layout. Ever. It is semantically bad, poor for accessibility, and makes for nearly unreadable source code. It has no place in the modern web. Don&#39;t do it.</li>
+<li>Use headings elements (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>) for headings.</li>
+<li>Use the <code>&lt;p&gt;</code> paragraph element for paragraph content. Do not separate paragraphs with multiple <code>&lt;br&gt;</code> elements. That would be an example of inserting presentation into your markup.</li>
+<li>Lists of items should always be marked up in a <code>&lt;dl&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;ul&gt;</code>. Never use a series of <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code> elements for lists.</li>
+<li>Use label fields to label each form field, the <code>for</code> attribute should associate itself with the input field, so users can click the labels. <code>cursor:pointer;</code> on the label in your CSS is wise, as well.</li>
+</ul>
+<p>These pages have some great information:</p>
+<ul>
+<li><a href="http://www.adobe.com/devnet/html5/articles/semantic-markup.html"><cite>Adobe Developer Connection: Using semantic HTML</cite>&lt;</a></li>
+<li><a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml"><cite>BBC: Future Media Standards &amp; Guidelines - Semantic Mark-up v1.6</cite></a></li>
+</ul>
+<h2>Quoting Attributes</h2>
+<p>While the HTML5 specification defines quotes around attributes as optional, for consistency with attributes that accept whitespace, all attributes should be quoted.</p>
+<pre class="highlighted"><code class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"line note"</span> <span class="attribute">data-attribute</span>=<span class="value">"106"</span>&gt;</span>This is my paragraph of special text.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></pre>
+<h2>Style Guidelines</h2>
+<h3>General Formatting</h3>
+<p>Use a new line for every block-level element. If they are children of other block-level elements, they should be indented.</p>
+<p>It is acceptable for <code>*</code> elements to be placed all on one line if the whitespace around them causes display issues (typically seen in horizontal layouts with <code>display: inline-block;</code>).</p>
+<h3>Protocol-Relative URLs</h3>
+<p>Omit the protocol (<code>http:</code>, <code>https:</code>) from embedded resources such as images, media files, style sheets, and script files unless the resource is not available over both protocols.</p>
+<p>This prevents mixed-content warnings in browsers. In HTML:</p>
+<pre class="highlighted"><code class="xml"><span class="comment">&lt;!-- Not recommended --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://www.google.com/js/gweb/analytics/autotrack.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="comment">&lt;!-- Recommended --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//www.google.com/js/gweb/analytics/autotrack.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre>
+<p>And in CSS:</p>
+<pre class="highlighted"><code class="css"><span class="comment">/* Not recommended */</span>
+<span class="class">.example</span> <span class="rules">{
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(http://www.google.com/images/example)</span>;</span></span>
+<span class="rule">}</span></span>
+
+<span class="comment">/* Recommended */</span>
+<span class="class">.example</span> <span class="rules">{
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(//www.google.com/images/example)</span>;</span></span>
+<span class="rule">}</span></span></code></pre>
+<h3>Capitalization</h3>
+<p>Use only lowercase for element names and attributes. HTML5 allows uppercase, but that doesn&#39;t read well.</p>
+<h3>Void Elements</h3>
+<p>Although fine with HTML, do not close void elements, e.g. write <code>&lt;br&gt;</code>, not <code>&lt;br /&gt;</code>.</p>
+<h3>Type attributes</h3>
+<p><code>type</code> attributes for style sheets and scripts can be safely omitted in HTML5 (unless using styles other than CSS or scripts other than JavaScript).</p>
+<p><a class="btn" href="workflow.html">Previous: Workflow</a>
+<a class="btn" href="css.html">Next: CSS</a></p>
+</div>
+</article>
+
+                </div>
+
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                                
+                                    <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                        <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                        <a href="/pages/workflow" property="dc:title">Workflow</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/html" class="active">
+                                        <a href="/pages/html" property="dc:title">HTML</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/css" class="">
+                                        <a href="/pages/css" property="dc:title">CSS</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                        <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/testing" class="">
+                                        <a href="/pages/testing" property="dc:title">Testing</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                        <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/performance" class="">
+                                        <a href="/pages/performance" property="dc:title">Performance</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                        <a href="/pages/microformats" property="dc:title">Microformats</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/seo" class="">
+                                        <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                        <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                        <a href="/pages/appendices" property="dc:title">Appendices</a>
+                                    </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <footer>
+            <p>&copy; FMR LLC 2013</p>
+            <p style="float:right;">
+                This website was last updated at 2013-02-13T01:50:29.210Z
+            </p>
+        </footer>
+    </div><!-- /container -->
+
+    <!-- Scripts -->
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jquery.js"></script><script defer="defer"  src="/vendor/log.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/vendor/modernizr.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>

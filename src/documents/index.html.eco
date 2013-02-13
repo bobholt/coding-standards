@@ -1,0 +1,46 @@
+--- yaml
+layout: 'default'
+title: 'Home'
+---
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+
+  <h1>Front-End Coding Standards</h1>
+
+  <p>
+    Coding standards for web sites and applications.
+  </p>
+
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+
+  <div class="span4">
+
+    <h2>Mission</h2>
+
+    <p>We believe that code consistency and adherence to best practices ensures readability, stability, and maintainability, and allows more efficient teamwork.</p>
+
+  </div>
+
+  <div class="span5">
+
+     <h2>References</h2>
+
+    <p>This document contains coding standards for web sites and applications. It owes a great deal of debt to similar documents that have come before, including:</p>
+
+    <ul>
+      <li><a href="http://isobar-idev.github.com/code-standards/"><cite>Roundarch Isobar Front-end Code Standards &amp; Best Practices</cite></a> - Roundarch Isobar</li>
+      <li><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml"><cite>Google HTML/CSS Style Guide</cite></a> - Google</li>
+      <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/"><cite>The Essentials of Writing High Quality JavaScript</cite></a> - Stoyan Stefanov</li>
+      <li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines"><cite>jQuery Core Style Guidelines</cite></a> - jQuery</li>
+      <li><a href="http://javascript.crockford.com/code.html"><cite>Code Conventions for the JavaScript Programming Language</cite></a> - Douglas Crockford</li>
+      <li><a href="https://github.com/rwldrn/idiomatic.js"><cite>Principles of Writing Consistent, Idiomatic JavaScript</cite></a> - Rick Waldron</li>
+      <li><a href="http://shop.oreilly.com/product/9780596806767.do">JavaScript Patterns</a> by Stoyan Stefanov</li>
+    </ul>
+
+  </div>
+
+</div>

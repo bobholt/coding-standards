@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Our site title and description -->
+    <title>General Guidelines | Your Website</title>
+    <meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
+    <meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Output DocPad produced meta elements -->
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Shims: IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap.min.css" /><link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap-responsive.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/highlightjs-default.css" />
+</head>
+<body>
+    <!-- Markup -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">Code Standards</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        
+                            <li typeof="sioc:Page" about="/pages/general-guidelines" class="active">
+                                <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                <a href="/pages/workflow" property="dc:title">Workflow</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/html" class="">
+                                <a href="/pages/html" property="dc:title">HTML</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/css" class="">
+                                <a href="/pages/css" property="dc:title">CSS</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/testing" class="">
+                                <a href="/pages/testing" property="dc:title">Testing</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/performance" class="">
+                                <a href="/pages/performance" property="dc:title">Performance</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                <a href="/pages/microformats" property="dc:title">Microformats</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/seo" class="">
+                                <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                <a href="/pages/appendices" property="dc:title">Appendices</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id="content" class="content">
+
+            <div class="row">
+
+                <div class="span9">
+
+                    <article id="page" class="page">
+    <h1>General Guidelines</h1>
+    <div class="page-content"><p>We have style guidelines in order to have a common vocabulary of coding so people can concentrate on what you&#39;re saying rather than on how you&#39;re saying it. Common code style across the organization helps consistency, readability, and team efficiency.</p>
+<p>Several things you will find here, such as indentation rules are simply choices between two or more equally-valid options. When establishing an organiational standard, these choices have to be made. To steal a phrase from <a href="http://www.crockford.com/">Douglas Crockford</a>, these standards &quot;will hurt your feelings,&quot; because no two developers will naturally code in exactly the same way. You may not agree with the choices we have made, but we ask that you abide by them on all work within Fidelity. You are free to code however you like on your own projects.</p>
+<p>In some cases, these standards will be enforced through the automated code linting and build process. Coding against the standard will throw errors that will have to be fixed before you will be allowed to commit code.</p>
+<h2>On Consistency</h2>
+<p>Be Consistent.</p>
+<p>If you&#39;re editing code someone else wrote, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.</p>
+<p>We present global style rules here so that we can all know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.</p>
+<h2>Separation of Concerns</h2>
+<p>Front-end development is made up of HTML, CSS, JavaScript, and related technologies. The most basic rule is:</p>
+<p><strong>Separate content, presentation, and behavior.</strong></p>
+<dl class="dl-horizontal">
+    <dt><dfn>Content</dfn></dt>
+    <dd>HTML markup. This should be structural, semantic, and devoid of presentation or behavioral code.</dd>
+
+    <dt><dfn>Presentation</dfn></dt>
+    <dd>CSS styling. It should be separate from your markup.</dd>
+
+    <dt><dfn>Behavior</dfn></dt>
+    <dd>JavaScript code. It should be separate from your markup.Y/dd&gt;
+</dl>
+
+<h2>Readability vs. Performance</h2>
+<p>Readable, maintainable code is better than unreadable code, no matter the performance gains. Always choose readability. Performance or file-size gains are negligible compared to the cost of maintaining too-clever code. Minification and compression as part of an automated build process reduce these gains even further. Superfluous or poorly-optimized images have a greater impact on performance than any code optimizations you are likely to make.</p>
+<p>Whitespace is encouraged to enhance readability, as are comments. Specific whitespace recommendations for each language will be covered in detail in later sections.</p>
+<h2>Indentation</h2>
+<p>In all languages, we choose to use <mark class="option">soft tabs: that is, spaces instead of the tab character</mark>. The tab size will be <mark class="option">two (2)</mark> spaces.</p>
+<h2>Line Endings</h2>
+<p>Difference in line-endings between different users is a common cause of merge conflicts.</p>
+<p>Unix/OS X and Windows use two different standards for line endings. Without going into specifics, choose Unix-style (LF), not Windows-style (CR+LF). There is a setting within SublimeText to ensure this.</p>
+<p>Also remove extra whitespace at the ends of lines of code. Your IDE should be set up to do this automatically. You may choose to &#39;show invisibles&#39; in your IDE. This will allow you to &#39;see&#39; the whitespace characters.</p>
+<p><a class="btn" href="index.html">Previous: Home</a>
+<a class="btn" href="workflow.html">Next: Workflow</a></p>
+</div>
+</article>
+
+                </div>
+
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                                
+                                    <li typeof="sioc:Page" about="/pages/general-guidelines" class="active">
+                                        <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/workflow" class="">
+                                        <a href="/pages/workflow" property="dc:title">Workflow</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/html" class="">
+                                        <a href="/pages/html" property="dc:title">HTML</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/css" class="">
+                                        <a href="/pages/css" property="dc:title">CSS</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                        <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/testing" class="">
+                                        <a href="/pages/testing" property="dc:title">Testing</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                        <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/performance" class="">
+                                        <a href="/pages/performance" property="dc:title">Performance</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                        <a href="/pages/microformats" property="dc:title">Microformats</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/seo" class="">
+                                        <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                        <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                        <a href="/pages/appendices" property="dc:title">Appendices</a>
+                                    </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <footer>
+            <p>&copy; FMR LLC 2013</p>
+            <p style="float:right;">
+                This website was last updated at 2013-02-13T01:50:29.210Z
+            </p>
+        </footer>
+    </div><!-- /container -->
+
+    <!-- Scripts -->
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jquery.js"></script><script defer="defer"  src="/vendor/log.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/vendor/modernizr.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>

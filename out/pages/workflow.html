@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Our site title and description -->
+    <title>Workflow | Your Website</title>
+    <meta name="description" content="When your website appears in search results in say Google, the text here will be shown underneath your website's title." />
+    <meta name="keywords" content="place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Output DocPad produced meta elements -->
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Shims: IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap.min.css" /><link  rel="stylesheet" href="/vendor/twitter-bootstrap/css/bootstrap-responsive.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/highlightjs-default.css" />
+</head>
+<body>
+    <!-- Markup -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">Code Standards</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        
+                            <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/workflow" class="active">
+                                <a href="/pages/workflow" property="dc:title">Workflow</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/html" class="">
+                                <a href="/pages/html" property="dc:title">HTML</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/css" class="">
+                                <a href="/pages/css" property="dc:title">CSS</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/testing" class="">
+                                <a href="/pages/testing" property="dc:title">Testing</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/performance" class="">
+                                <a href="/pages/performance" property="dc:title">Performance</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                <a href="/pages/microformats" property="dc:title">Microformats</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/seo" class="">
+                                <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                            </li>
+                        
+                            <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                <a href="/pages/appendices" property="dc:title">Appendices</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id="content" class="content">
+
+            <div class="row">
+
+                <div class="span9">
+
+                    <article id="page" class="page">
+    <h1>Workflow</h1>
+    <div class="page-content"><p>One of the benefits of code standards is that it makes it easier for team members to jump into another developer&#39;s project and immediately begin working. We enforce a common development platform and workflow across the organization for a similar reason. If you have ever tried to help another developer only to be completely lost in their development environment, you can understand the benefit to be gained.</p>
+<h2>IDE</h2>
+<h3>Sublime Text</h3>
+<p>Sublime Text has quickly grown to be an industry-favorite IDE. It offers many helpful options and plugins to help you code more efficiently and with greater precision. It is more powerful than a simple text editor such as Notepad++, but without the bloat of an IDE commonly used to develop back-end code such as Eclipse or Visual Studio.</p>
+<h4>Plugins</h4>
+
+<p>We recommend several plugins for use in Sublime Text. Some of these carry a strong recommendation as they help you meet code standards as you code&mdash;before running a lint or validation tool. Others are optional, but are plugins that we have found to help coding efficiency.</p>
+<h5>Strongly Recommended</h5>
+
+
+<ul>
+<li><a href="http://wbond.net/sublime_packages/package_control">Package Control</a> - Sublime Text&#39;s Package Control manager. This is used to install all other plugins.</li>
+<li><a href="http://github.com/facelessuser/BracketHighlighter">BracketHighlighter</a> - Highlights opening and closing brackets and HTML tags for the block your cursor is currently in.</li>
+<li><a href="http://docs.emmet.io">Emmet</a> - formerly known as Zen Coding, this plugin can speed up your HTML and CSS writing by automatically creating closing tags, and following simple macros to programatically create code.</li>
+<li><a href="http://github.com/SublimeText/jQuery">jQuery</a> - adds jQuery syntax recognition to Sublime Text</li>
+<li><a href="http://github.com/SublimeText/LineEndings">LineEndings</a> - adds line ending and space/tab information and commands to the Sublime status bar.</li>
+<li><a href="http://github.com/nathos/sass-textmate-bundle">Sass</a> - adds syntax highlighting and code completion for SASS/SCSS</li>
+<li><a href="http://github.com/titoBouzout/SideBarEnhancements">SideBarEnhancements</a> - adds useful commands to the right-click context menu in the Sublime Sidebar. Includes &quot;Open With,&quot; &quot;Delete,&quot; &quot;Move,&quot; &quot;Rename,&quot; and enhanced &quot;Find&quot; options.</li>
+<li><a href="http://github.com/SublimeLinter/SublimeLinter">SublimeLinter</a> - Lint support for many languages - including HTML tidy, JSHint, and CSSLint.</li>
+</ul>
+<h4>User Settings</h4>
+
+<p>User settings in Sublime Text are JavaScript objects. You can alter these to change the behavior of your environment. Again, some of these will help you conform to the Fidelity standards automatically, so are required. Others are optional, but recommended to help your coding efficiency.</p>
+<h2>Browser</h2>
+<p>Front-end development requires a reliable web browser to run and test your code. We recommend initially writing your code to be work in a modern standards-compliant browser and then back-testing into the legacy browsers you need to support. Both Firefox and Chrome are modern browsers that offer robust development tools for only inspecting and debugging your code. In addition, Chrome&#39;s Dev Tools include tools for monitoring performance and memory usage, and so carries our highest recommendation, but you are free to choose either Firefox or Chrome.</p>
+<h3>Chrome</h3>
+<p>Chrome&#39;s Dev Tools are constantly improved and updated. The links below include both introductory information as well as some advanced tutorials. NETTUTS+ has been running a series of in-depth tutorials of the Chrome Dev Tools since late 2012. We have listed some of those tutorials below.</p>
+<ul>
+<li><a href="https://developers.google.com/chrome-developer-tools/">Google Chrome Developer Tools</a> - An introduction to the Developer Tools by Google</li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/chrome-dev-tools-markup-and-style/">Chrome Dev Tools: Markup and Style</a> - NETTUTS+, October 2, 2012</li>
+<li><a href="http://net.tutsplus.com/tutorials/chrome-dev-tools-networking-and-the-console/">Chrome Dev Tools: Networking and the Console</a> - NETTUTS+, November 27, 2012</li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/chrome-dev-tools-javascript-and-performance/">Chrome Dev Tools: JavaScript and Performance</a> - NETTUTS+, February 4, 2013</li>
+</ul>
+<h3>Firefox</h3>
+<p>Firefox is also a modern browser, supporting most advanced features of HTML5 and CSS3. For a long time, developer tools in Firefox were limited to those in the <a href="http://getfirebug.com/">Firebug addon</a>. Firefox now implements its own native developer tools, but Firebug is still around for those things that aren&#39;t yet in the native tools.</p>
+<h2>Preprocessors</h2>
+<p>When we talk about preprocessors, we are usually referring to meta-languages that go through some sort of compilation process to output standard CSS or JavaScript. In our case, we&#39;re talking about using SASS/SCSS to generate CSS.</p>
+<h3>SASS/SCSS and Compass</h3>
+<p>SASS/SCSS is a meta-language that compiles down to CSS. It offers a number of features that make writing styles faster, easier, and less error-prone. These include variables and functions, mixins, nesting, and inheritance.</p>
+<p>More information can be found on the <a href="http://sass-lang.com/">SASS website</a> and on the site for <a href="http://compass-style.org/">Compass</a>, a mixin and utility library for SASS.</p>
+<h2>JS Frameworks</h2>
+<p>JavaScript frameworks are a necessary part of modern web development. Browser differences still plague us, and the DOM API isn&#39;t easy to navigate. Libraries extract much of the compatability and complexity issues, and give us a stable base on which to build our projects. In addition, many libraries implement commonly-used functionality many developers find useful.</p>
+<h3>jQuery</h3>
+<p>jQuery is, at its heart, a DOM library that provides a cross-browser layer of abstraction between sensible code the DOM API. It also offers visual effects and AJAX modules. In addition, many popular JavaScript plugins are built around jQuery and extend the jQuery object. jQuery&#39;s own sister projects jQuery UI and jQuery Mobile are only two examples of these.</p>
+<h3>Underscore</h3>
+<p>Underscore is a utility library that adds programming support to JavaScript, particularly around the manipulation of objects and arrays. It is a hard dependency of Backbone.js.</p>
+<h3>Backbone</h3>
+<p>Backbone.js is a lightweight library that provides MVC/MVVM/MV* separation for front-end web applications. It is equally suited to single page and multi-page applications.</p>
+<h2>Linting and Validation</h2>
+<p>Linting is the process of validating the semantics of a language. It can&#39;t tell you whether or not your program will work, but it can tell you if you used the language correctly. The strictness of linting increased so that it not only reports language errors, but also warnings for style rules. We will use some of these strict options to ensure universal implementation of our coding standards.</p>
+<h3>JSHint</h3>
+<p>JSHint is based off of Douglas Crockford&#39;s <a href="http://www.jslint.com/">JSLint program</a>. JSLint is very opinionated. JSHint is less so, and offers options to strengthen or weaken many of its default settings.</p>
+<h3>CSSLint</h3>
+<p>CSSLint was developed by Nicole Sullivan and Nicholas Zakas. It validates the selector choices and styles in your CSS and issues warnings based on best practices.</p>
+<h3>SublimeLinter</h3>
+<p>SublimeLinter is a plugin for Sublime Text that runs JSHint and CSSLint automatically each time you save your file, and highlights errors and warnings. This integration directly into the IDE speeds up development since you don&#39;t have to run a build process just to see your linting errors.</p>
+<h2>Build</h2>
+<p>An automated build process is an integral part of modern web development. Concatenation, minification, and compression of static assets improves performance of web sites and applications more than any other enhancement.</p>
+<h3>Grunt</h3>
+<p>Grunt is a JavaScript-based build tool. Though still in beta, it offers a number of modules for tasks such as compiling SASS, compressing images, building Require.js web applications with r.js, and more. It also offers a &quot;watch&quot; task that monitors your filesystem for changes, and runs custom tasks depending on the file changed.</p>
+<h3>ANT</h3>
+<p>ANT is a Java-based build tool. It is likely familiar to anyone who has done enterprise application development. It is stable, and has years of experience behind it. That said, it is significantly slower than the js-based Grunt, and uses a syntax that will be less familiar to front-end developers. Concerns about Grunt&#39;s changing API as it progresses out of beta, will likely force this to be the build tool of choice for the time being.</p>
+<h2>Version Control</h2>
+<p>Version Control is a requirement for any team project. It&#39;s even a good idea if you&#39;re working alone. It provides a way to modify code without worry. If things go awry, you can always revert back to an earlier version. Most version control systems also allow release tagging to mark official release versions of code.</p>
+<h3>SVN</h3>
+<p>SVN is a non-distributed version control system. There is a single central canonical code repository. Users check code out of the repository, modify it, and commit their changes back into the repository where it then becomes available for other users to check out.</p>
+<p>SVN tracks each file separately. You can make a series of changes to a number of files, and then choose which files to send to the repository on an atomic level.</p>
+<h3>Git</h3>
+<p>In contrast to SVN, Git is a distributed version control system. While there is a central master branch, users clone a copy of the entire repository to their local system. They can then change, commit, and roll back changes locally, only sending changes back to the master when they are satisfied. This allows the user to work completely disconnected from the network.</p>
+<p>Repository administrators can have greater control over Git repositories than SVN. The repository administrator can choose what to merge and from whom. Of course, multiple people can be given administrative access, but this is unlike SVN, which has a strict on/off commit access.</p>
+<h3>ClearCase</h3>
+<!-- TODO: Needs content -->
+
+<h2>Testing</h2>
+<p>The rigorous testing of software has long been a part of enterprise-level development. Testing has only recently received its due emphasis in front-end development, but many tools are already available to the savvy developer.</p>
+<h3>Unit Testing</h3>
+<p>Unlike some server-side languages like Java or C#, JavaScript does not directly support unit testing. Various libraries introduce unit testing to JavaScript, and can run either in the browser or on a Node server. Our testing suite is as follows:</p>
+<h4>Mocha</h4>
+
+<p>Mocha is a unit-testing framework for JavaScript. It runs on either the browser or a Node server. It does not include an assertion library, but allows the user to choose one they may prefer.</p>
+<p>The main reasons we choose Mocha are that it allows us to choose our own assertion library, and its first-class support for asynchronous testing. Since JavaScript is by nature asynchronous, and we may often need to test asynchronous code, this is a big deal.</p>
+<h4>Chai</h4>
+
+<p>Chai is our assertion library of choice. Chai allows either TDD (<code>assert()</code>)or BDD-style (<code>expect()</code>/<code>should()</code>) assertions. For readability and to match our development workflow, we prefer the BDD-style. Due to compatability issues with Internet Explorer, we prefer the <code>expect()</code> syntax to the <code>should()</code> syntax.</p>
+<h4>Sinon</h4>
+
+<p>Sinon is a library that offers spies, stubs, and mocks for unit testing. This basically means it offers several ways to simulate methods and track when they&#39;re called.</p>
+<p>Sinon has no dependencies, and will work with any unit-testing framework.</p>
+<h3>Continuous Integration</h3>
+<p>Continuous integration is the process by which automated testing is done each time the project source is modified, giving immediate feedback about whether the code builds, and where any errors might be located.</p>
+<h4>Travis CI</h4>
+
+<p>Travis CI is a continuous integration server for open-source projects. If your project has a public GitHub repository, you can easily integrate Travis CI.</p>
+<h3>Other Testing</h3>
+<p>The tools here are less about automated testing, and more about smoke tests and testing within development.</p>
+<h4>Adobe Edge Inspect</h4>
+
+<p>Adobe Edge Inspect runs a server from your development machine that a number of mobile devices can connect to. The devices stay in sync with the page currently rendered by the development machine&#39;s browser. The development machine can then use its own dev tools to remotely inspect any of these devices, debug, and take screenshots.&lt;/p</p>
+<h2>Optional</h2>
+<p>The following tools are all optional in that we don&#39;t force you to use these specific things. We find that they assist our development process, so we recommend you use them or a similar equivalent.</p>
+<h3>General</h3>
+<h4>LiveReload</h4>
+
+<p><a href="http://livereload.com/">LiveReload</a> is a program that monitors your filesystem. Anytime you change a file, it is preprocessed. In addition, LiveReload refreshes the browser for you, so you never have to switch out of your IDE.</p>
+<p>LiveReload has a stable OS X release, and currently has an alpha release for Windows.</p>
+<h3>Mac OS X</h3>
+<h4>zsh</h4>
+
+<p>zsh is a replacement for the standard bash shell that ships with OS X. It has much of the same functionality, but with some useful additions. You can see an argument for using zsh here: <a href="http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/"><a href="http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/">http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/</a></a>.</p>
+<p>A useful addition to zsh is <a href="https://github.com/bobholt/prezto">prezto</a>, which is a fork of <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>. This is a library of &quot;dotfiles&quot; that offers additional functionality to make your terminal use more efficient.</p>
+<h4>iTerm2</h4>
+
+<p><a href="http://www.iterm2.com/">iTerm 2</a> is a terminal replacement program for Mac OS X. If you spend any time in the terminal, you will likely find iTerm 2&#39;s features to be useful.</p>
+<h2>Resources</h2>
+<ul>
+<li><a href="http://jameslutley.com/my-2012-front-end-web-development-workflow/"><cite>James Lutley: My 2012 front-end web development workflow</cite></a></li>
+</ul>
+<p><a class="btn" href="general-guidelines.html">Previous: General Guidelines</a>
+<a class="btn" href="html.html">Next: HTML</a></p>
+</div>
+</article>
+
+                </div>
+
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                                
+                                    <li typeof="sioc:Page" about="/pages/general-guidelines" class="">
+                                        <a href="/pages/general-guidelines" property="dc:title">General Guidelines</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/workflow" class="active">
+                                        <a href="/pages/workflow" property="dc:title">Workflow</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/html" class="">
+                                        <a href="/pages/html" property="dc:title">HTML</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/css" class="">
+                                        <a href="/pages/css" property="dc:title">CSS</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/javascript" class="">
+                                        <a href="/pages/javascript" property="dc:title">JavaScript</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/testing" class="">
+                                        <a href="/pages/testing" property="dc:title">Testing</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/accessibility" class="">
+                                        <a href="/pages/accessibility" property="dc:title">Accessibility</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/performance" class="">
+                                        <a href="/pages/performance" property="dc:title">Performance</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/microformats" class="">
+                                        <a href="/pages/microformats" property="dc:title">Microformats</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/seo" class="">
+                                        <a href="/pages/seo" property="dc:title">Search Engine Optimization</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/code-reviews" class="">
+                                        <a href="/pages/code-reviews" property="dc:title">Code Reviews</a>
+                                    </li>
+                                
+                                    <li typeof="sioc:Page" about="/pages/appendices" class="">
+                                        <a href="/pages/appendices" property="dc:title">Appendices</a>
+                                    </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <footer>
+            <p>&copy; FMR LLC 2013</p>
+            <p style="float:right;">
+                This website was last updated at 2013-02-13T01:50:29.210Z
+            </p>
+        </footer>
+    </div><!-- /container -->
+
+    <!-- Scripts -->
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jquery.js"></script><script defer="defer"  src="/vendor/log.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/js/bootstrap.min.js"></script><script defer="defer"  src="/vendor/modernizr.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>
