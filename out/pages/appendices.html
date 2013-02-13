@@ -114,11 +114,167 @@
                     <article id="page" class="page">
     <h1>Appendices</h1>
     <div class="page-content"><h2>Appendix A: JSHint Options</h2>
-<ul>
-<li><code>&quot;browser&quot; = true</code>, <code>&quot;jquery&quot; = true</code> - This allows us to use globals variables available in modern browsers and jQuery.</li>
-<li><code>&quot;eqeqeq&quot; = true</code>, <code>&quot;eqnull&quot; = true</code> - Almost universally we use <code>===</code> or <code>!==</code> with the exception of when we&#39;re comparing against <code>null</code>. It&#39;s actually quite useful to do <code>== null</code> or <code>!= null</code> as it will pass (or fail) if the value is either <code>null</code> or <code>undefined</code>. If we want to explicitly check for a <code>null</code> or <code>undefined</code> value we use <code>=== null</code> or <code>=== undefined</code>.</li>
-<li><code>&quot;smarttabs&quot; = true</code> - This allows us to mix tabs and spaces on the same line, which we only do in comment blocks</li>
-</ul>
+<p>The following options should be set in both your project&#39;s JSHint build options and in SublimeText&#39;s SublimeLinter plugin user options (Sublime Text 2 &gt; Preferences &gt; Package Settings &gt; SublimeLinter &gt; Settings - User). See &quot;Settings - Default&quot; for the proper formatting (or download a <a href="/files/sublime-text--settings-user.txt">sample</a>). The jQuery option below can be set to <code>true</code> for SublimeText, but should be <code>false</code> in your project build.</p>
+<pre class="highlighted"><code class="no-highlight">// Enforcing Options
+&quot;bitwise&quot;       : true,     // Prohibits bitwise operators
+&quot;camelcase&quot;     : true,     // Forces camelCase or UPPER_CASE variable names
+&quot;curly&quot;         : true,     // Requires curly braces around blocks
+&quot;eqeqeq&quot;        : true,     // Forces strict equality checks
+&quot;forin&quot;         : true,     // Requires own property checks in `for-in` loops
+&quot;immed&quot;         : true,     // Requires IIFEs to be wrapped in parentheses
+&quot;indent&quot;        : 4,        // Enforces a specific tab width (may not work?)
+&quot;latedef&quot;       : true,     // Requires defining a variable before using it
+&quot;newcap&quot;        : true,     // Requires constructor functions to be capitalized
+&quot;noarg&quot;         : true,     // Prohibits `arguments.caller` &amp; `arguments.callee`
+&quot;noempty&quot;       : true,     // Warns about empty code blocks (useless code)
+&quot;nonew&quot;         : true,     // Prohibits using constructors for side-effects
+&quot;plusplus&quot;      : false,    // Prohibits increment &amp; decrement (`++` &amp; `--`) - DISABLED
+&quot;quotmark&quot;      : &quot;single&quot;, // Forces single quotes for strings
+&quot;regexp&quot;        : true,     // Prohibits the unsafe `.` selector in regular expressions
+&quot;undef&quot;         : true,     // Prohibits using explicitly undeclared variables
+&quot;unused&quot;        : true,     // Warns on unused variables
+&quot;strict&quot;        : true,     // Forces strict mode in functional scope
+&quot;trailing&quot;      : true,     // Makes trailing whitespace an error
+&quot;maxparams&quot;     : 4,        // Sets the maximum number of arguments allowed in a fn
+&quot;maxdepth&quot;      : 3,        // Sets the maximum number of nested blocks
+&quot;maxstatements&quot; : 30,       // Sets the maximum number of statements allowed in a fn
+&quot;maxcomplexity&quot; : 10,       // Sets cyclomatic complexity
+&quot;maxlen&quot;        : 150,      // Sets the maximum line length
+
+// Relaxing Options
+&quot;asi&quot;           : false,    // Allows missing semicolons
+&quot;boss&quot;          : false,    // Allows using assignment `=` where comparison `===` is expected
+&quot;debug&quot;         : false,    // Allows `debugger` statements
+&quot;eqnull&quot;        : true,     // Allows `==` when comparing with null - ENABLED
+&quot;es5&quot;           : false,    // Allows ES5 features which may not be supported in all browsers
+&quot;esnext&quot;        : false,    // Allows ES6 features which are not yet finalized
+&quot;evil&quot;          : false,    // Allows the use of `eval()`
+&quot;expr&quot;          : false,    // Allows the use of expressions where assignments or fn calls are expected
+&quot;funcscope&quot;     : false,    // Allows declaring variables inside control structures
+&quot;globalstrict&quot;  : false,    // Allows global strict mode, which can break third-party plugins
+&quot;iterator&quot;      : false,    // Allows using the `__iterator__` property
+&quot;lastsemic&quot;     : false,    // Allows no semicolons on the last statement in a 1-line block
+&quot;laxbreak&quot;      : false,    // Allows potentially-unsafe line breaks
+&quot;laxcomma&quot;      : false,    // Allows comma-first coding style
+&quot;loopfunc&quot;      : false,    // Allows fn definition inside loops
+&quot;multistr&quot;      : false,    // Allows multi-line strings
+&quot;onecase&quot;       : false,    // Allows single-case switches.
+&quot;proto&quot;         : false,    // Allows using the `__proto__` property
+&quot;regexdash&quot;     : false,    // Allows unescaped `-` at the end of regular expressions
+&quot;scripturl&quot;     : false,    // Allows `javascript:` urls
+&quot;smarttabs&quot;     : false,    // Allows mixed tabs &amp; spaces
+&quot;shadow&quot;        : false,    // Allows variable shadowing
+&quot;sub&quot;           : false,    // Allows `[]` notation when dot notation is available.
+&quot;supernew&quot;      : false,    // Allows &quot;weird&quot; constructors
+&quot;validthis&quot;     : false,    // Allows possible strict violations of `this`.
+
+// Environments
+&quot;browser&quot;       : true,     // Pre-defines browser globals such as `document` and `navigator`
+&quot;couch&quot;         : false,    // Pre-defines CouchDB globals
+&quot;devel&quot;         : false,    // Pre-defines `console` and `alert` globals
+&quot;dojo&quot;          : false,    // Pre-defines Dojo globals
+&quot;jquery&quot;        : false,    // Pre-defines jQuery globals - Enable in SublimeText Options
+&quot;mootools&quot;      : false,    // Pre-defines MooTools globals
+&quot;node&quot;          : false,    // Pre-defines Node.js globals
+&quot;nonstandard&quot;   : false,    // Pre-defines non-standard globals like `escape` and `unescape`
+&quot;prototypejs&quot;   : false,    // Pre-defines Prototype globals
+&quot;rhino&quot;         : false,    // Pre-defines Rhino globals
+&quot;worker&quot;        : false,    // Pre-defines Web Worker globals
+&quot;wsh&quot;           : false,    // Pre-defines Windows Script Host globals
+&quot;yui&quot;           : false,    // Pre-defines YUI globals
+
+// Legacy
+// These options are legacy from JSLint.
+// Aside from bug fixes they will not be improved in any way and might be removed.
+&quot;nomen&quot;         : false,    // Prohibits the dangling `_` in variables
+&quot;onevar&quot;        : false,    // Forces one `var` statement per fn
+&quot;passfail&quot;      : false,    // Forces JSHint to stop on the first error
+&quot;white&quot;         : false,    // Checks against Douglas Crockford&#39;s whitespace rules</code></pre>
+<p>The following options should not be included in project linting, but can be added to Sublime Text&#39;s SublimeLinter User Options so it doesn&#39;t yell at you for your test suite.</p>
+<pre class="highlighted"><code class="no-highlight">// Pre-defined globals
+&quot;predef&quot;        : [
+    &quot;after&quot;,        // Chai BDD Assertions
+    &quot;afterEach&quot;,    // Chai BDD Assertions
+    &quot;before&quot;,       // Chai BDD Assertions
+    &quot;beforeEach&quot;,   // Chai BDD Assertions
+    &quot;define&quot;,       // Require.js AMD definition
+    &quot;describe&quot;,     // Chai BDD Assertions
+    &quot;expect&quot;,       // Chai BDD Assertions
+    &quot;it&quot;,           // Chai BDD Assertions
+    &quot;require&quot;,      // Require.js AMD definition
+    &quot;sinon&quot;         // Sinon mock/stub/spy framework global
+]</code></pre>
+<h2>Appendix B: Sublime Text User Settings</h2>
+<p>The following settings are recommended for SublimeText. You can copy this directly into your User Settings (Sublime Text &gt; Preferences &gt; Settings - User) if it is empty, or edit it to include the following:</p>
+<pre class="highlighted"><code class="no-highlight">{
+    // The number of spaces a tab is considered equal to
+    // Required by our standards
+    &quot;tab_size&quot;: 4,
+
+    // Set to true to insert spaces when tab is pressed
+    // Default to soft-tabs. Required by our standards
+    &quot;translate_tabs_to_spaces&quot;: true,
+
+    // Set to true to removing trailing white space on save
+    // Required by our standards
+    &quot;trim_trailing_white_space_on_save&quot;: true
+
+    // Determines what character(s) are used to terminate each line in new files.
+    // Valid values are &#39;system&#39; (whatever the OS uses), &#39;windows&#39; (CRLF) and
+    // &#39;unix&#39; (LF only).
+    // Required by our standards
+    &quot;default_line_ending&quot;: &quot;unix&quot;,
+
+    // List any packages to ignore here. When removing entries from this list,
+    // a restart may be required if the package contains plugins.
+    // Vintage puts SublimeText in VI mode.
+    &quot;ignored_packages&quot;: [
+        &quot;Vintage&quot;
+    ]
+}</code></pre>
+<p>There are plenty of other options you can choose from. Refer to the Default Settings file for explanations, but some we find useful are:</p>
+<pre class="highlighted"><code class="no-highlight">// Completely Optional
+{
+    // Spacing between the gutter and the text
+    // Reduces space in the IDE
+    &quot;margin&quot;: 0,
+
+    // Columns in which to display vertical rulers
+    // Adds a line at our JSHint-set right text limit
+    &quot;rulers&quot;: [150],
+
+    // Set to true to turn spell checking on by default
+    &quot;spell_check&quot;: true,
+
+    // Makes auto indent a little smarter, e.g., by indenting the next line
+    // after an if statement in C. Requires auto_indent to be enabled.
+    // This seems to have additional side-effects. Set to false.
+    &quot;smart_indent&quot;: false,
+
+    // Set to true to draw a border around the visible rectangle on the minimap.
+    // The color of the border will be determined by the &quot;minimapBorder&quot; key in
+    // the color scheme
+    // Makes it easier to see the visible rectangle in some color schemes
+    &quot;draw_minimap_border&quot;: true,
+
+    // Set to false to disable scrolling past the end of the buffer.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you&#39;ll need to place this line in your user settings to override it.
+    // Makes the right-side mini-map scroll more intuitively
+    &quot;scroll_past_end&quot;: false,
+
+    // By default, auto complete will commit the current completion on enter.
+    // This setting can be used to make it complete on tab instead.
+    // Completing on tab is generally a superior option, as it removes
+    // ambiguity between committing the completion and inserting a newline.
+    &quot;auto_complete_commit_on_tab&quot;: true,
+
+    // Makes tabs with modified files more visible
+    &quot;highlight_modified_tabs&quot;: true,
+
+    // Show folders in the side bar in bold
+    &quot;bold_folder_labels&quot;: true
+}</code></pre>
 <p><a class="btn" href="code-reviews.html">Previous: Code Reviews</a></p>
 </div>
 </article>
@@ -185,9 +341,9 @@
 
         </section>
         <footer>
-            <p>&copy; FMR LLC 2013</p>
+            <p>&copy; Bob Holt 2013</p>
             <p style="float:right;">
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             </p>
         </footer>
     </div><!-- /container -->

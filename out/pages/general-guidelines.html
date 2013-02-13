@@ -113,12 +113,12 @@
 
                     <article id="page" class="page">
     <h1>General Guidelines</h1>
-    <div class="page-content"><p>We have style guidelines in order to have a common vocabulary of coding so people can concentrate on what you&#39;re saying rather than on how you&#39;re saying it. Common code style across the organization helps consistency, readability, and team efficiency.</p>
-<p>Several things you will find here, such as indentation rules are simply choices between two or more equally-valid options. When establishing an organiational standard, these choices have to be made. To steal a phrase from <a href="http://www.crockford.com/">Douglas Crockford</a>, these standards &quot;will hurt your feelings,&quot; because no two developers will naturally code in exactly the same way. You may not agree with the choices we have made, but we ask that you abide by them on all work within Fidelity. You are free to code however you like on your own projects.</p>
-<p>In some cases, these standards will be enforced through the automated code linting and build process. Coding against the standard will throw errors that will have to be fixed before you will be allowed to commit code.</p>
+    <div class="page-content"><p>Style guidelines exit in order to have a common vocabulary of coding so other developers can concentrate on what you&#39;re saying rather than on how you&#39;re saying it. Common code style across an organization helps consistency, readability, and team efficiency.</p>
+<p>Several things, such as indentation rules, are choices between two or more equally-valid options. These choices have to be made for project consistency. To steal a phrase from <a href="http://www.crockford.com/">Douglas Crockford</a>, these standards &quot;will hurt your feelings,&quot; because no two developers will naturally code in exactly the same way, and it is unlikely you already code in exactly the way these standards define. You may not agree with these choices, but we ask that you abide by them. You are free to code however you like on your own projects.</p>
+<p>In some cases, these standards will be enforced through an automated code linting and build process. Coding against the standard will throw errors that will have to be fixed before you will be allowed to commit code.</p>
 <h2>On Consistency</h2>
 <p>Be Consistent.</p>
-<p>If you&#39;re editing code someone else wrote, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.</p>
+<p>If you&#39;re editing code someone else wrote, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, your comments should have little boxes of hash marks around them too.</p>
 <p>We present global style rules here so that we can all know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.</p>
 <h2>Separation of Concerns</h2>
 <p>Front-end development is made up of HTML, CSS, JavaScript, and related technologies. The most basic rule is:</p>
@@ -138,11 +138,11 @@
 <p>Readable, maintainable code is better than unreadable code, no matter the performance gains. Always choose readability. Performance or file-size gains are negligible compared to the cost of maintaining too-clever code. Minification and compression as part of an automated build process reduce these gains even further. Superfluous or poorly-optimized images have a greater impact on performance than any code optimizations you are likely to make.</p>
 <p>Whitespace is encouraged to enhance readability, as are comments. Specific whitespace recommendations for each language will be covered in detail in later sections.</p>
 <h2>Indentation</h2>
-<p>In all languages, we choose to use <mark class="option">soft tabs: that is, spaces instead of the tab character</mark>. The tab size will be <mark class="option">two (2)</mark> spaces.</p>
+<p>In all languages, we choose to use <strong>soft tabs</strong>: that is, spaces instead of the tab character. The tab size will be <strong>two (2)</strong> spaces.</p>
 <h2>Line Endings</h2>
 <p>Difference in line-endings between different users is a common cause of merge conflicts.</p>
-<p>Unix/OS X and Windows use two different standards for line endings. Without going into specifics, choose Unix-style (LF), not Windows-style (CR+LF). There is a setting within SublimeText to ensure this.</p>
-<p>Also remove extra whitespace at the ends of lines of code. Your IDE should be set up to do this automatically. You may choose to &#39;show invisibles&#39; in your IDE. This will allow you to &#39;see&#39; the whitespace characters.</p>
+<p>Unix/OS X and Windows use two different standards for line endings. Without going into specifics, choose Unix-style (LF), not Windows-style (CR+LF). There is a setting within SublimeText to ensure this, and <a href="http://github.com/SublimeText/LineEndings">a plugin</a> to help you manage it.</p>
+<p>Remove extra whitespace at the ends of lines of code. Your IDE should be set up to do this automatically. You may choose to &#39;show invisibles&#39; in your IDE. This will allow you to &#39;see&#39; the whitespace characters.</p>
 <p><a class="btn" href="index.html">Previous: Home</a>
 <a class="btn" href="workflow.html">Next: Workflow</a></p>
 </div>
@@ -210,9 +210,9 @@
 
         </section>
         <footer>
-            <p>&copy; FMR LLC 2013</p>
+            <p>&copy; Bob Holt 2013</p>
             <p style="float:right;">
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             </p>
         </footer>
     </div><!-- /container -->

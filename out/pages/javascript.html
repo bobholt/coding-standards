@@ -227,13 +227,14 @@ MYAPP<span class="preprocessor">.pageOne</span> = (function(){&amp;hellip<span c
 <p>Strings should always use <mark>single-quotes instead of double-quotes. This is helpful when creating strings that include HTML.</mark></p>
 <h3>Loops</h3>
 <p><code>for-in</code> loops are often incorrectly used to loop over the elements in an Array. This is very error prone because it does not loop from 0 to length - 1 but over all the keys present in the object and its prototype chain. Always use normal <code>for</code> loops when using arrays.</p>
+<p>When using jQuery, it is acceptable to use $.each() to loop over arrays, if you prefer. The performance hit is relatively small.</p>
 <h3>document.write()</h3>
-<p>Don&#39;t use document.write().</p>
+<p>Don&#39;t use <code>document.write()</code>.</p>
 <h3>eval()</h3>
 <p>The <code>eval</code> function has historically been the most misused feature of JavaScript. Avoid it.</p>
 <p><code>eval</code> has aliases. Do not use the Function constructor. Do not pass strings to <code>setTimeout</code> or <code>setInterval</code>.</p>
 <h3>parseInt()</h3>
-<p>Always specify the radix parameter in parseInt(). This avoids unexpected parsing into non-decimal numbers. A common example is when parsing strings from date form fields:</p>
+<p>Always specify the radix parameter in <code>parseInt()</code>. This avoids unexpected parsing into non-decimal numbers. A common example is when parsing strings from date form fields:</p>
 <pre class="highlighted"><code class="coffeescript"><span class="regexp">//</span> With the radix
 parseInt(<span class="string">'09'</span>, <span class="number">10</span>) === <span class="number">9</span>;
 
@@ -241,7 +242,7 @@ parseInt(<span class="string">'09'</span>, <span class="number">10</span>) === <
 <span class="regexp">//</span> The leading zero forces <span class="keyword">this</span> into base-<span class="number">8</span>
 parseInt(<span class="string">'09'</span>) === <span class="number">0</span>;</code></pre>
 <h2>Unit Testing</h2>
-<p>Projects <em>must</em> include some form of unit, reference, implementation or functional testing. Use case demos DO NOT QUALIFY as &quot;tests&quot;.</p>
+<p>Projects <em>must</em> include some form of unit, reference, implementation or functional testing. Use case demonstrations DO NOT QUALIFY as &quot;tests&quot;.</p>
 <p>Our current preferred unit testing suite is <a href="http://visionmedia.github.com/mocha/">Mocha</a> with <a href="http://sinonjs.org/">Sinon</a> and <a href="http://chaijs.com/">Chai</a>.</p>
 <h2>Comments and Documentation</h2>
 <h3>Comments</h3>
@@ -249,20 +250,20 @@ parseInt(<span class="string">'09'</span>) === <span class="number">0</span>;</c
 <p>It is important that comments be kept up-to-date. Erroneous comments can make programs even harder to read and understand.</p>
 <p>Make comments meaningful. Focus on what is not immediately visible. Don&#39;t waste the reader&#39;s time with stuff like this:</p>
 <pre class="highlighted"><code class="sql">i = 0; // <span class="operator"><span class="keyword">Set</span> i <span class="keyword">to</span> zero.</code></pre>
-<p>Generally use line comments. Save block comments for formal documentation and for commenting out large blocks of quote. Large commented-out blocks of quote should be removed when no longer needed. They only serve to confuse later developers as to whether their functionality was permanently removed or planned to be implemented in the future.</p>
+<p>Generally use line comments. Save block comments for formal documentation and for commenting out large blocks of quote. Large commented-out blocks of quote should be removed when no longer needed. They only serve to confuse later developers about whether the functionality was permanently removed or planned to be implemented in the future.</p>
 <p>Single line comments should always be on their own line and be above the line they reference. Additionally there should be an extra endline above it. For example:</p>
 <pre class="highlighted"><code class="applescript">var <span class="keyword">some</span> = <span class="string">"stuff"</span>;
 
 // Loop <span class="keyword">over</span> <span class="keyword">the</span> <span class="keyword">first</span> ten elements <span class="keyword">of</span> <span class="keyword">the</span> array
 <span class="keyword">for</span> ( var i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ ) {}</code></pre>
 <h3>Documentation</h3>
-<p>Documentation should follow <mark><a href="http://yui.github.com/yuidoc/">YUIDoc</a></mark> structure. Style information can be found on <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments">Google&#39;s Style Guide</a> and the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">JavaDoc</a> style guide is a useful resource on how to write well-formed doc comments. A syntax reference is available on the <a href="http://yui.github.com/yuidoc/syntax/index.html">YUIDoc site</a>.</p>
-<p>Avoid sentence fragments. Start sentences with a properly capitalized word, and end them with punctuation.</p>
+<p>Documentation should follow <a href="http://yui.github.com/yuidoc/">YUIDoc</a> structure. Style information can be found on <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments">Google&#39;s Style Guide</a> and the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">JavaDoc</a> style guide is a useful resource on how to write well-formed doc comments. A syntax reference is available on the <a href="http://yui.github.com/yuidoc/syntax/index.html">YUIDoc site</a>.</p>
+<p>Avoid sentence fragments in documentation. Start sentences with a properly capitalized word, and end them with punctuation.</p>
 <h2>Feature Detection</h2>
 <p>Don&#39;t rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.org/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>).</p>
 <p><a href="http://modernizr.com/">Modernizr</a> makes this very easy, and a build of it should be in every project, if only to provide HTML5 shimming.</p>
 <h2>Deploying to Production</h2>
-<p>All JavaScript is required to pass <a href="http://www.jshint.com/">JSHint</a> before moving to production. See <a href="appendices.html#a">Appendix A</a> for a list of options we include by default.</p>
+<p>All JavaScript is required to pass <a href="http://www.jshint.com/">JSHint</a> before moving to production. See <a href="appendices.html">Appendix A</a> for a list of options we include by default.</p>
 <p>Use automatic minification. <a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a> or <a href="https://github.com/mishoo/UglifyJS">UglifyJS</a> as part of an automated build process is preferred. Don&#39;t manually minify. With the exception of the traditional <code>i</code>, etc. in <code>for</code> loops, variable names in your code should be long enough to be meaningful.</p>
 <h2>Event Delegation</h2>
 <p>When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.</p>
@@ -298,7 +299,7 @@ var mightThrow = <span class="keyword">function</span>() {
 <h3>Naming Conventions</h3>
 <p>Naming Conventions in JavaScript are just that: conventions. There is nothing in JavaScript that requires these conventions, but these have emerged over time as a best practice, and should be observed.</p>
 <h4>Files</h4>
-<p>Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - (dash) or _ (underscore) <mark>(we prefer dashes to underscores)</mark>. For example, <code>myfile.js</code> or <code>my-file.js</code>.</p>
+<p>Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - (dash) or _ (underscore) (we prefer dashes to underscores). For example, <code>myfile.js</code> or <code>my-file.js</code>.</p>
 <h4>Variables and Functions</h4>
 <p>Variables and functions should be lower camel-case. That is, they should start with a lowercase letter, and subsequent words in the name should be capitalized. For example, <code>myFunction()</code> or <code>myReallyLongFunction()</code></p>
 <p>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>. All Boolean variables should start with &quot;is&quot;. Test for positive conditions.</p>
@@ -310,12 +311,12 @@ var mightThrow = <span class="keyword">function</span>() {
 var instance = new MyConstructor();</code></pre>
 <h5>Constants</h5>
 <p>Use all-caps separated by underscores for variables you would consider to be constant. Never use the <code>const</code> keyword because IE doesn&#39;t parse it.</p>
-<pre class="highlighted"><code class="nginx"><span class="title">var</span> DAY_IN_WEEK = <span class="number">7</span>;</code></pre>
+<pre class="highlighted"><code class="nginx"><span class="title">var</span> DAYS_IN_WEEK = <span class="number">7</span>;</code></pre>
 <h5>Private variables</h5>
 <p>&quot;Private&quot; variable and function names should start with an underscore. Since JavaScript doesn&#39;t have true &quot;private&quot; properties, this is simply an indicator to developers to neither change nor rely on any undocumented behavior of this property.</p>
 <pre class="highlighted"><code class="r">var _dontTouchMe = <span class="keyword">function</span>() {<span class="keyword">...</span>}</code></pre>
 <h3>Whitespace</h3>
-<p>Use <mark><strong>two spaces</strong></mark> to indent your code.</p>
+<p>Use <strong>two spaces</strong> to indent your code.</p>
 <p>Use liberal spacing in your code for readability. The minification process will take care of removing it.</p>
 <pre class="highlighted"><code class="cs"><span class="comment">// NO:</span>
 <span class="keyword">if</span>(blah===<span class="string">'foo'</span>){
@@ -511,9 +512,9 @@ someVar = logicalTest ? <span class="string">'ifTrue'</span> : <span class="stri
 
         </section>
         <footer>
-            <p>&copy; FMR LLC 2013</p>
+            <p>&copy; Bob Holt 2013</p>
             <p style="float:right;">
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             </p>
         </footer>
     </div><!-- /container -->

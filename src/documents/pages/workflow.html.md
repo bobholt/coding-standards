@@ -10,28 +10,35 @@ One of the benefits of code standards is that it makes it easier for team member
 
 ### Sublime Text ###
 
-Sublime Text has quickly grown to be an industry-favorite IDE. It offers many helpful options and plugins to help you code more efficiently and with greater precision. It is more powerful than a simple text editor such as Notepad++, but without the bloat of an IDE commonly used to develop back-end code such as Eclipse or Visual Studio.
+[Sublime Text](http://www.sublimetext.com/) has quickly grown to be an industry-favorite IDE. It offers many helpful options and plugins to help you code more efficiently and with greater precision. It is more powerful than a simple text editor such as Notepad++, but without the bloat of an IDE commonly used to develop back-end code such as Eclipse or Visual Studio.
 
-<h4>Plugins</h4>
+#### Plugins ####
 
 We recommend several plugins for use in Sublime Text. Some of these carry a strong recommendation as they help you meet code standards as you code&mdash;before running a lint or validation tool. Others are optional, but are plugins that we have found to help coding efficiency.
 
-<h5>Strongly Recommended</h5>
+##### Required #####
 
+These plugins are required because they catch many of the things that will be caught later in the build process. It is better to catch these things early, and learn to change your development style if necessary.
 
 * [Package Control](http://wbond.net/sublime_packages/package_control) - Sublime Text's Package Control manager. This is used to install all other plugins.
+* [SublimeLinter](http://github.com/SublimeLinter/SublimeLinter) - Lint support for many languages - including HTML tidy, JSHint, and CSSLint.
+
+##### Strongly Recommended #####
+
+If you can get by without these, you're welcome to, but they're certainly very helpful.
+
 * [BracketHighlighter](http://github.com/facelessuser/BracketHighlighter) - Highlights opening and closing brackets and HTML tags for the block your cursor is currently in.
 * [Emmet](http://docs.emmet.io) - formerly known as Zen Coding, this plugin can speed up your HTML and CSS writing by automatically creating closing tags, and following simple macros to programatically create code.
 * [jQuery](http://github.com/SublimeText/jQuery) - adds jQuery syntax recognition to Sublime Text
 * [LineEndings](http://github.com/SublimeText/LineEndings) - adds line ending and space/tab information and commands to the Sublime status bar.
 * [Sass](http://github.com/nathos/sass-textmate-bundle) - adds syntax highlighting and code completion for SASS/SCSS
 * [SideBarEnhancements](http://github.com/titoBouzout/SideBarEnhancements) - adds useful commands to the right-click context menu in the Sublime Sidebar. Includes "Open With," "Delete," "Move," "Rename," and enhanced "Find" options.
-* [SublimeLinter](http://github.com/SublimeLinter/SublimeLinter) - Lint support for many languages - including HTML tidy, JSHint, and CSSLint.
 
+#### User Settings ####
 
-<h4>User Settings</h4>
+You should only ever change the user settings in SublimeText. The default settings will be overwritten any time Sublime updates.
 
-User settings in Sublime Text are JavaScript objects. You can alter these to change the behavior of your environment. Again, some of these will help you conform to the standards automatically, and so are required. Others are optional, but recommended to help your coding efficiency.
+User settings in Sublime Text are JavaScript objects. You can alter these to change the behavior of your environment. Again, some of these will help you conform to the standards automatically, and so are required. Others are optional, but recommended to help your coding efficiency. You ca find these in [Appendix B](appendices.html).
 
 ## Browser ##
 
@@ -68,15 +75,15 @@ JavaScript frameworks are a necessary part of modern web development. Browser di
 
 ### jQuery ###
 
-jQuery is, at its heart, a DOM library that provides a cross-browser layer of abstraction between sensible code the DOM API. It also offers visual effects and AJAX modules. In addition, many popular JavaScript plugins are built around jQuery and extend the jQuery object. jQuery's own sister projects jQuery UI and jQuery Mobile are only two examples of these.
+[jQuery](http://jquery.com/) is, at its heart, a DOM library that provides a cross-browser layer of abstraction between sensible code the DOM API. It also offers visual effects and AJAX modules. In addition, many popular JavaScript plugins are built around jQuery and extend the jQuery object. jQuery's own sister projects [jQuery UI](http://jqueryui.com/) and [jQuery Mobile](http://jquerymobile.com/) are only two examples of these.
 
 ### Underscore ###
 
-Underscore is a utility library that adds programming support to JavaScript, particularly around the manipulation of objects and arrays. It is a hard dependency of Backbone.js.
+[Underscore](http://underscorejs.org/) is a utility library that adds programming support to JavaScript, particularly around the manipulation of objects and arrays. It is a hard dependency of Backbone.js.
 
 ### Backbone ###
 
-Backbone.js is a lightweight library that provides MVC/MVVM/MV* separation for front-end web applications. It is equally suited to single page and multi-page applications.
+[Backbone.js](http://backbonejs.org/) is a lightweight library that provides MVC/MVVM/MV* separation for front-end web applications. It is equally suited to single page and multi-page applications.
 
 ## Linting and Validation ##
 
@@ -84,15 +91,15 @@ Linting is the process of validating the semantics of a language. It can't tell 
 
 ### JSHint ###
 
-JSHint is based off of Douglas Crockford's [JSLint program](http://www.jslint.com/). JSLint is very opinionated. JSHint is less so, and offers options to strengthen or weaken many of its default settings.
+[JSHint](http://www.jshint.com/) is based off of Douglas Crockford's [JSLint program](http://www.jslint.com/). JSLint is very opinionated. JSHint is less so, and offers options to strengthen or weaken many of its default settings.
 
 ### CSSLint ###
 
-CSSLint was developed by Nicole Sullivan and Nicholas Zakas. It validates the selector choices and styles in your CSS and issues warnings based on best practices.
+[CSSLint](http://csslint.net/) was developed by Nicole Sullivan and Nicholas Zakas. It validates the selector choices and styles in your CSS and issues warnings based on best practices.
 
 ### SublimeLinter ###
 
-SublimeLinter is a plugin for Sublime Text that runs JSHint and CSSLint automatically each time you save your file, and highlights errors and warnings. This integration directly into the IDE speeds up development since you don't have to run a build process just to see your linting errors.
+[SublimeLinter](http://github.com/SublimeLinter/SublimeLinter) is a plugin for Sublime Text that runs JSHint and CSSLint automatically each time you save your file, and highlights errors and warnings. This integration directly into the IDE speeds up development since you don't have to run a build process just to see your linting errors.
 
 ## Build ##
 
@@ -100,11 +107,11 @@ An automated build process is an integral part of modern web development. Concat
 
 ### Grunt ###
 
-Grunt is a JavaScript-based build tool. Though still in beta, it offers a number of modules for tasks such as compiling SASS, compressing images, building Require.js web applications with r.js, and more. It also offers a "watch" task that monitors your filesystem for changes, and runs custom tasks depending on the file changed.
+[Grunt](http://gruntjs.com/) is a JavaScript-based build tool. Though still in beta, it offers a number of modules for tasks such as compiling SASS, compressing images, building Require.js web applications with r.js, and more. It also offers a "watch" task that monitors your filesystem for changes, and runs custom tasks depending on the file changed.
 
 ### ANT ###
 
-ANT is a Java-based build tool. It is likely familiar to anyone who has done enterprise application development. It is stable, and has years of experience behind it. That said, it is significantly slower than the js-based Grunt, and uses a syntax that will be less familiar to front-end developers. Concerns about Grunt's changing API as it progresses out of beta, will likely force this to be the build tool of choice for the time being.
+[ANT](http://ant.apache.org/) is a Java-based build tool. It is likely familiar to anyone who has done enterprise application development. It is stable, and has years of experience behind it. That said, it is significantly slower than the js-based Grunt, and uses a syntax that will be less familiar to front-end developers. Concerns about Grunt's changing API as it progresses out of beta, will likely force this to be the build tool of choice for the time being.
 
 ## Version Control ##
 
@@ -112,19 +119,19 @@ Version Control is a requirement for any team project. It's even a good idea if 
 
 ### SVN ###
 
-SVN is a non-distributed version control system. There is a single central canonical code repository. Users check code out of the repository, modify it, and commit their changes back into the repository where it then becomes available for other users to check out.
+[Subversion](http://subversion.apache.org/) (SVN) is a non-distributed version control system. There is a single central canonical code repository. Users check code out of the repository, modify it, and commit their changes back into the repository where it then becomes available for other users to check out.
 
 SVN tracks each file separately. You can make a series of changes to a number of files, and then choose which files to send to the repository on an atomic level.
 
 ### Git ###
 
-In contrast to SVN, Git is a distributed version control system. While there is a central master branch, users clone a copy of the entire repository to their local system. They can then change, commit, and roll back changes locally, only sending changes back to the master when they are satisfied. This allows the user to work completely disconnected from the network.
+In contrast to SVN, [Git](http://git-scm.com/) is a distributed version control system. While there is a central master branch, users clone a copy of the entire repository to their local system. They can then change, commit, and roll back changes locally, only sending changes back to the master when they are satisfied. This allows the user to work completely disconnected from the network.
 
 Repository administrators can have greater control over Git repositories than SVN. The repository administrator can choose what to merge and from whom. Of course, multiple people can be given administrative access, but this is unlike SVN, which has a strict on/off commit access.
 
 ### ClearCase ###
 
-<!-- TODO: Needs content -->
+[IBM Rational ClearCase](http://www-01.ibm.com/software/awdtools/clearcase/)
 
 ## Testing ##
 
@@ -134,19 +141,19 @@ The rigorous testing of software has long been a part of enterprise-level develo
 
 Unlike some server-side languages like Java or C#, JavaScript does not directly support unit testing. Various libraries introduce unit testing to JavaScript, and can run either in the browser or on a Node server. Our testing suite is as follows:
 
-<h4>Mocha</h4>
+#### Mocha ####
 
-Mocha is a unit-testing framework for JavaScript. It runs on either the browser or a Node server. It does not include an assertion library, but allows the user to choose one they may prefer.
+[Mocha](http://visionmedia.github.com/mocha/) is a unit-testing framework for JavaScript. It runs on either the browser or a Node server. It does not include an assertion library, but allows the user to choose one they may prefer.
 
 The main reasons we choose Mocha are that it allows us to choose our own assertion library, and its first-class support for asynchronous testing. Since JavaScript is by nature asynchronous, and we may often need to test asynchronous code, this is a big deal.
 
-<h4>Chai</h4>
+#### Chai ####
 
-Chai is our assertion library of choice. Chai allows either TDD (`assert()`)or BDD-style (`expect()`/`should()`) assertions. For readability and to match our development workflow, we prefer the BDD-style. Due to compatability issues with Internet Explorer, we prefer the `expect()` syntax to the `should()` syntax.
+[Chai](http://chaijs.com/) is our assertion library of choice. Chai allows either TDD (`assert()`)or BDD-style (`expect()`/`should()`) assertions. For readability and to match our development workflow, we prefer the BDD-style. Due to compatability issues with Internet Explorer, we prefer the `expect()` syntax to the `should()` syntax.
 
-<h4>Sinon</h4>
+#### Sinon ####
 
-Sinon is a library that offers spies, stubs, and mocks for unit testing. This basically means it offers several ways to simulate methods and track when they're called.
+[Sinon](http://sinonjs.org/) is a library that offers spies, stubs, and mocks for unit testing. This basically means it offers several ways to simulate methods and track when they're called.
 
 Sinon has no dependencies, and will work with any unit-testing framework.
 
@@ -154,17 +161,17 @@ Sinon has no dependencies, and will work with any unit-testing framework.
 
 Continuous integration is the process by which automated testing is done each time the project source is modified, giving immediate feedback about whether the code builds, and where any errors might be located.
 
-<h4>Travis CI</h4>
+#### Travis CI ####
 
-Travis CI is a continuous integration server for open-source projects. If your project has a public GitHub repository, you can easily integrate Travis CI.
+[Travis CI](https://travis-ci.org/) is a continuous integration server for open-source projects. If your project has a public GitHub repository, you can easily integrate Travis CI.
 
 ### Other Testing ###
 
 The tools here are less about automated testing, and more about smoke tests and testing within development.
 
-<h4>Adobe Edge Inspect</h4>
+#### Adobe Edge Inspect ####
 
-Adobe Edge Inspect runs a server from your development machine that a number of mobile devices can connect to. The devices stay in sync with the page currently rendered by the development machine's browser. The development machine can then use its own dev tools to remotely inspect any of these devices, debug, and take screenshots.
+[Adobe Edge Inspect](http://html.adobe.com/edge/inspect/) runs a server from your development machine that a number of mobile devices can connect to. The devices stay in sync with the page currently rendered by the development machine's browser. The development machine can then use its own dev tools to remotely inspect any of these devices, debug, and take screenshots.
 
 ## Optional ##
 
@@ -182,7 +189,7 @@ LiveReload has a stable OS X release, and currently has an alpha release for Win
 
 #### zsh ####
 
-zsh is a replacement for the standard bash shell that ships with OS X. It has much of the same functionality, but with some useful additions. You can see an argument for using zsh here: <http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/>.
+[zsh](http://www.zsh.org/) is a replacement for the standard bash shell that ships with OS X. It has much of the same functionality, but with some useful additions. You can see an argument for using zsh here: <http://friedcpu.wordpress.com/2007/07/24/zsh-the-last-shell-youll-ever-need/>.
 
 A useful addition to zsh is [prezto](https://github.com/bobholt/prezto), which is a fork of [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). This is a library of "dotfiles" that offers additional functionality to make your terminal use more efficient.
 

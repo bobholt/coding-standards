@@ -114,9 +114,9 @@
                     <article id="page" class="page">
     <h1>HTML</h1>
     <div class="page-content"><p>HTML is the structure and content of the web. It does not define the look and feel of a document, but its semantic structure. We will define formatting and style rules in raw files that use HTML, including template files.</p>
-<p>We will follow HTML5 as our markup standard we will follow. We don&#39;t believe that there is any arguable reason to use XHTML. HTML5 should be the baseline for any new project. Its doctype works in all browsers, and older browsers such as IE6 can be shimmed to support new HTML5 elements.</p>
+<p>We will follow the HTML5 markup standard. We don&#39;t believe that there is any arguable reason to use XHTML. HTML5 should be the baseline for any new project. Its doctype works in all browsers, and older browsers such as IE6 can be shimmed to support new HTML5 elements.</p>
 <h2>HTML5 Boilerplate</h2>
-<p>The <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> offers a quick and easy template for any HTML5 site. It is the combined result of hundreds of developers contributing knowledge and best practices. You should strongly consider using it as the basis for any new project.</p>
+<p>The <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> offers a quick and easy template for any HTML5 site. It is the combined result of many many developers contributing knowledge and best practices. You should strongly consider using it as the basis for any new project.</p>
 <h2>Doctype</h2>
 <p>Only doctypes which trigger browser standards modes should be used. Quirks mode is not acceptable. The HTML5 doctype works in all browsers, triggers standards mode, and removes the need to use CDATA blocks for inline JavaScript (which you should avoid in most cases).</p>
 <p><code>&lt;!DOCTYPE html&gt;</code></p>
@@ -131,7 +131,7 @@
 <h2>Viewport Meta Element</h2>
 <p>The viewport meta element should be constructed in this manner:</p>
 <p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</code></p>
-<p>This configuration sets the content to match the width of the device, while still allowing the user to zoom in or out to their preferred level. You may see developers use <code>maximum-scale=&quot;1&quot;</code>. This prohibits the user from zooming in on a mobile device, and for accessibility, should never be used.</p>
+<p>This configuration sets the content to match the width of the device, while still allowing the user to zoom in or out to their preferred level. You may see developers use <code>maximum-scale=1</code> or <code>user-scalable=no</code>. This prohibits the user from zooming in on a mobile device, and for accessibility, should never be used.</p>
 <h2>Validation</h2>
 <p>All HTML markup should be run through the <a href="http://validator.w3.org/">W3C validator</a>. 100% validity is not necessary, but you should understand why your code does not pass, and make a conscious choice for that outcome.</p>
 <h2>Comments</h2>
@@ -140,8 +140,9 @@
     ...
 <span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="comment">&lt;!-- end div.my-div --&gt;</span></code></pre>
 <h2>Conditional Comments</h2>
-<p>Internet Explorer prior to version 10 recognizes conditional comments, which allows the conditional loading of resources (such as stylesheets or script files) based on the version of IE the client is using.</p>
+<p>Internet Explorer prior to version 10 recognizes <a href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx">conditional comments</a>, which allows the conditional loading of resources (such as stylesheets or script files) based on the version of IE the client is using.</p>
 <p>Every effort should be made to construct a fully-functional and well-rendered site prior to the use of conditional comments. Conditionals should be something of a last resort for browser compatibility.</p>
+<p>HTML5 Boilerplate handles this in an interesting way, using conditional comments to add <code>.ie7</code>, <code>.ie8</code>, or <code>.ie9</code> classes to the page, which can then be used in your base stylesheet to specify IE-specific styles. This makes it so IE isn&#39;t forced to download an additional stylesheet (a file-transfer penalty).</p>
 <h2>Semantic Markup</h2>
 <p>HTML elements should be chosen in such a way as to represent the semantic content of the document. Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons. This is a longer conversation than we will tackle at the present time, but here are a few quick pointers:</p>
 <ul>
@@ -162,7 +163,7 @@
 <h2>Style Guidelines</h2>
 <h3>General Formatting</h3>
 <p>Use a new line for every block-level element. If they are children of other block-level elements, they should be indented.</p>
-<p>It is acceptable for <code>*</code> elements to be placed all on one line if the whitespace around them causes display issues (typically seen in horizontal layouts with <code>display: inline-block;</code>).</p>
+<p>It is acceptable for <code>&lt;li&gt;</code> elements to be placed all on one line if the whitespace around them causes display issues (typically seen in horizontal layouts with <code>display: inline-block;</code>).</p>
 <h3>Protocol-Relative URLs</h3>
 <p>Omit the protocol (<code>http:</code>, <code>https:</code>) from embedded resources such as images, media files, style sheets, and script files unless the resource is not available over both protocols.</p>
 <p>This prevents mixed-content warnings in browsers. In HTML:</p>
@@ -254,9 +255,9 @@
 
         </section>
         <footer>
-            <p>&copy; FMR LLC 2013</p>
+            <p>&copy; Bob Holt 2013</p>
             <p style="float:right;">
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             </p>
         </footer>
     </div><!-- /container -->

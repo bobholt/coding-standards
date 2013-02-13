@@ -7,7 +7,7 @@ pageOrder: 4
 
 The second component of a web page is the presentation information contained in the Cascading Style Sheet (CSS.) Web browsers successful implementation of CSS has given a whole generation of web authors site-wide control over the look and feel of their web sites.
 
-Just as the information on a web page is semantically described in the HTML Markup, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").
+Just as the information on a web page is semantically described in the HTML markup, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").
 
 Many of our CSS rules are drawn from the default rules for [CSS Lint](http://csslint.net/). These are a collection of best practices from people who have built very large modular web applications. We have augmented them with additional recommendations.
 
@@ -19,7 +19,7 @@ Your CSS should be in external files, linked to from the HEAD of the document us
 
 Reset files allow more consistent styling across browsers. Solutions range from the more invasive to the looser, depending on how much of the browser defaults to come through.
 
-We generally recommend normalize.css, which ships with the HTML5 Boilerplate, and offers sensible defaults.
+We generally recommend normalize.css, which ships with the [HTML5 Boilerplate](http://html5boilerplate.com/), and offers sensible defaults.
 
 ## Formatting ##
 
@@ -46,13 +46,13 @@ In the long history of CSS, several "hacks" were discovered that selectively loa
 
 ## !important ##
 
-The occasional use of `!important` can be necessary; for example, when overriding a third-party widget (such as Twitter or Disqus) that dynamically loads in its own !important styles. Outside of this example, however, the `!important` declaration is usually a sign of poorly-formed CSS. When backed into using the `!important` declaration, it is likely more advantageous for you to refactor your CSS immediately than to use it.
+The occasional use of `!important` can be necessary; for example, when overriding a third-party widget (such as [Twitter](http://dev.twitter.com/) or [Disqus](http://disqus.com/)) that dynamically loads in its own !important styles. Outside of this example, however, the `!important` declaration is usually a sign of poorly-formed CSS. When backed into using the `!important` declaration, it is likely more advantageous for you to refactor your CSS immediately than to use it.
 
 ## Vendor Prefixes ##
 
 Experimental CSS properties often require vendor prefixes to work in certain browsers. While browser vendors such as Chrome are working as quickly as possible to support these properties without the prefix, they remain an important part of writing CSS.
 
-Some developers only use the -webkit prefix on experimental properties. As this excludes the sizable population that uses a Mozilla, Opera, or Microsoft browser engine, we should use all vendor prefixes required by a property. Additionally, don't forget to use the non-prefixed property, which will future-proof your site for when browsers drop the prefix.
+Some developers only use the -webkit prefix on experimental properties. As this excludes the sizable population that uses a Mozilla, Presto, or Microsoft browser engine, we should use all vendor prefixes required by a property. Additionally, don't forget to use the non-prefixed property, which will future-proof your site for when browsers drop the prefix.
 
 Luckily for us, if we use SASS with Compass, the pre-made [Compass CSS3 prefixes mixin](http://compass-style.org/reference/compass/css3/) will take care of this for us.
 
@@ -132,13 +132,13 @@ For the most part, we aren't overly concerned with selector performance. There a
 
 ### RegEx Selectors ###
 
-There are some selectors that utilize a regular expression when being applied to the page, and are significantly slower than other selectors. For the most part, these are used when matching attributes such as:
+Some selectors utilize a regular expression when being applied to the page, and are significantly slower than other selectors. For the most part, these are used when matching attributes such as:
 
     a[href*=github.com] {
         color: green;
     }
 
-The list of selectors to avoid is as follows:
+Selectors to avoid include:
 
 
 * `*=`

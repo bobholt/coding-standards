@@ -11,11 +11,9 @@ We primarily develop new applications in [jQuery](http://api.jquery.com/), thoug
 
 Additional libraries to be familiar with include:
 
-
 * [Backbone.js](http://documentcloud.github.com/backbone/)
 * [underscore.js](http://documentcloud.github.com/underscore/) (required by Backbone) <mark>(the Underscore compatability build of [Lo-Dash](http://lodash.com/) is currently preferred for its better performance and stability.)</mark>
 * [RequireJS](http://requirejs.org/)
-
 
 ## Code Organization ##
 
@@ -159,8 +157,10 @@ Strings should always use <mark>single-quotes instead of double-quotes. This is 
 ### Loops ###
 `for-in` loops are often incorrectly used to loop over the elements in an Array. This is very error prone because it does not loop from 0 to length - 1 but over all the keys present in the object and its prototype chain. Always use normal `for` loops when using arrays.
 
+When using jQuery, it is acceptable to use $.each() to loop over arrays, if you prefer. The performance hit is relatively small.
+
 ### document.write() ###
-Don't use document.write().
+Don't use `document.write()`.
 
 ### eval() ###
 The `eval` function has historically been the most misused feature of JavaScript. Avoid it.
@@ -168,7 +168,7 @@ The `eval` function has historically been the most misused feature of JavaScript
 `eval` has aliases. Do not use the Function constructor. Do not pass strings to `setTimeout` or `setInterval`.
 
 ### parseInt() ###
-Always specify the radix parameter in parseInt(). This avoids unexpected parsing into non-decimal numbers. A common example is when parsing strings from date form fields:
+Always specify the radix parameter in `parseInt()`. This avoids unexpected parsing into non-decimal numbers. A common example is when parsing strings from date form fields:
 
     // With the radix
     parseInt('09', 10) === 9;
@@ -179,7 +179,7 @@ Always specify the radix parameter in parseInt(). This avoids unexpected parsing
 
 ## Unit Testing ###
 
-Projects *must* include some form of unit, reference, implementation or functional testing. Use case demos DO NOT QUALIFY as "tests".
+Projects *must* include some form of unit, reference, implementation or functional testing. Use case demonstrations DO NOT QUALIFY as "tests".
 
 Our current preferred unit testing suite is [Mocha](http://visionmedia.github.com/mocha/) with [Sinon](http://sinonjs.org/) and [Chai](http://chaijs.com/).
 
@@ -195,7 +195,7 @@ Make comments meaningful. Focus on what is not immediately visible. Don't waste 
 
     i = 0; // Set i to zero.
 
-Generally use line comments. Save block comments for formal documentation and for commenting out large blocks of quote. Large commented-out blocks of quote should be removed when no longer needed. They only serve to confuse later developers as to whether their functionality was permanently removed or planned to be implemented in the future.
+Generally use line comments. Save block comments for formal documentation and for commenting out large blocks of quote. Large commented-out blocks of quote should be removed when no longer needed. They only serve to confuse later developers about whether the functionality was permanently removed or planned to be implemented in the future.
 
 Single line comments should always be on their own line and be above the line they reference. Additionally there should be an extra endline above it. For example:
 
@@ -206,9 +206,9 @@ Single line comments should always be on their own line and be above the line th
 
 ### Documentation ###
 
-Documentation should follow <mark>[YUIDoc](http://yui.github.com/yuidoc/)</mark> structure. Style information can be found on [Google's Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments) and the [JavaDoc](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) style guide is a useful resource on how to write well-formed doc comments. A syntax reference is available on the [YUIDoc site](http://yui.github.com/yuidoc/syntax/index.html).
+Documentation should follow [YUIDoc](http://yui.github.com/yuidoc/) structure. Style information can be found on [Google's Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments) and the [JavaDoc](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) style guide is a useful resource on how to write well-formed doc comments. A syntax reference is available on the [YUIDoc site](http://yui.github.com/yuidoc/syntax/index.html).
 
-Avoid sentence fragments. Start sentences with a properly capitalized word, and end them with punctuation.
+Avoid sentence fragments in documentation. Start sentences with a properly capitalized word, and end them with punctuation.
 
 ## Feature Detection ##
 
@@ -218,7 +218,7 @@ Don't rely on the user-agent string. Do proper feature detection. (More at [Dive
 
 ## Deploying to Production ##
 
-All JavaScript is required to pass [JSHint](http://www.jshint.com/) before moving to production. See [Appendix A](appendices.html#a) for a list of options we include by default.
+All JavaScript is required to pass [JSHint](http://www.jshint.com/) before moving to production. See [Appendix A](appendices.html) for a list of options we include by default.
 
 Use automatic minification. [Google Closure Compiler](https://developers.google.com/closure/compiler/) or [UglifyJS](https://github.com/mishoo/UglifyJS) as part of an automated build process is preferred. Don't manually minify. With the exception of the traditional `i`, etc. in `for` loops, variable names in your code should be long enough to be meaningful.
 
@@ -268,7 +268,7 @@ Naming Conventions in JavaScript are just that: conventions. There is nothing in
 
 #### Files ####
 
-Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - (dash) or _ (underscore) <mark>(we prefer dashes to underscores)</mark>. For example, `myfile.js` or `my-file.js`.
+Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - (dash) or _ (underscore) (we prefer dashes to underscores). For example, `myfile.js` or `my-file.js`.
 
 #### Variables and Functions ####
 
@@ -290,7 +290,7 @@ Constructor functions should use upper camel case. JavaScript issues neither a c
 
 Use all-caps separated by underscores for variables you would consider to be constant. Never use the `const` keyword because IE doesn't parse it.
 
-    var DAY_IN_WEEK = 7;
+    var DAYS_IN_WEEK = 7;
 
 ##### Private variables #####
 
@@ -300,7 +300,7 @@ Use all-caps separated by underscores for variables you would consider to be con
 
 ### Whitespace ###
 
-Use <mark>**two spaces**</mark> to indent your code.
+Use **two spaces** to indent your code.
 
 Use liberal spacing in your code for readability. The minification process will take care of removing it.
 

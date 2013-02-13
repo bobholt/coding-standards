@@ -3,7 +3,7 @@
     <title>Your Website</title>
     <link href="http://website.com/atom.xml" rel="self"/>
     <link href="http://website.com"/>
-    <updated>2013-02-13T01:50:29.210Z</updated>
+    <updated>2013-02-13T14:35:33.362Z</updated>
     <id>http://website.com</id>
     <author>
         <name>Your Name</name>
@@ -201,9 +201,9 @@
 
         &lt;/section&gt;
         &lt;footer&gt;
-            &lt;p&gt;&amp;copy; FMR LLC 2013&lt;/p&gt;
+            &lt;p&gt;&amp;copy; Bob Holt 2013&lt;/p&gt;
             &lt;p style=&quot;float:right;&quot;&gt;
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             &lt;/p&gt;
         &lt;/footer&gt;
     &lt;/div&gt;&lt;!-- /container --&gt;
@@ -243,7 +243,7 @@ var inject = function(){
 };
 		inject();
 	}
-})();&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/jquery.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/log.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/modernizr.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+})();&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/jquery.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/log.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/twitter-bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/modernizr.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </content>

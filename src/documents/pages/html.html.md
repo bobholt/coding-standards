@@ -11,7 +11,7 @@ We will follow the HTML5 markup standard. We don't believe that there is any arg
 
 ## HTML5 Boilerplate ##
 
-The [HTML5 Boilerplate](http://html5boilerplate.com/) offers a quick and easy template for any HTML5 site. It is the combined result of hundreds of developers contributing knowledge and best practices. You should strongly consider using it as the basis for any new project.
+The [HTML5 Boilerplate](http://html5boilerplate.com/) offers a quick and easy template for any HTML5 site. It is the combined result of many many developers contributing knowledge and best practices. You should strongly consider using it as the basis for any new project.
 
 ## Doctype ##
 
@@ -40,7 +40,7 @@ The viewport meta element should be constructed in this manner:
 
 `<meta name="viewport" content="width=device-width">`
 
-This configuration sets the content to match the width of the device, while still allowing the user to zoom in or out to their preferred level. You may see developers use `maximum-scale="1"`. This prohibits the user from zooming in on a mobile device, and for accessibility, should never be used.
+This configuration sets the content to match the width of the device, while still allowing the user to zoom in or out to their preferred level. You may see developers use `maximum-scale=1` or `user-scalable=no`. This prohibits the user from zooming in on a mobile device, and for accessibility, should never be used.
 
 ## Validation ##
 
@@ -56,14 +56,15 @@ Commenting HTML is not as important as JavaScript, but it can be useful for deli
 
 ## Conditional Comments ##
 
-Internet Explorer prior to version 10 recognizes conditional comments, which allows the conditional loading of resources (such as stylesheets or script files) based on the version of IE the client is using.
+Internet Explorer prior to version 10 recognizes [conditional comments](http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx), which allows the conditional loading of resources (such as stylesheets or script files) based on the version of IE the client is using.
 
 Every effort should be made to construct a fully-functional and well-rendered site prior to the use of conditional comments. Conditionals should be something of a last resort for browser compatibility.
+
+HTML5 Boilerplate handles this in an interesting way, using conditional comments to add `.ie7`, `.ie8`, or `.ie9` classes to the page, which can then be used in your base stylesheet to specify IE-specific styles. This makes it so IE isn't forced to download an additional stylesheet (a file-transfer penalty).
 
 ## Semantic Markup ##
 
 HTML elements should be chosen in such a way as to represent the semantic content of the document. Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons. This is a longer conversation than we will tackle at the present time, but here are a few quick pointers:
-
 
 * Never ever use tables for page layout. Ever. It is semantically bad, poor for accessibility, and makes for nearly unreadable source code. It has no place in the modern web. Don't do it.
 * Use headings elements (`<h1>` - `<h6>`) for headings.
@@ -71,13 +72,10 @@ HTML elements should be chosen in such a way as to represent the semantic conten
 * Lists of items should always be marked up in a `<dl>`, `<ol>`, or `<ul>`. Never use a series of `<div>` or `<p>` elements for lists.
 * Use label fields to label each form field, the `for` attribute should associate itself with the input field, so users can click the labels. `cursor:pointer;` on the label in your CSS is wise, as well.
 
-
 These pages have some great information:
-
 
 * [<cite>Adobe Developer Connection: Using semantic HTML</cite><](http://www.adobe.com/devnet/html5/articles/semantic-markup.html)
 * [<cite>BBC: Future Media Standards & Guidelines - Semantic Mark-up v1.6</cite>](http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml)
-
 
 ## Quoting Attributes ##
 
@@ -91,7 +89,7 @@ While the HTML5 specification defines quotes around attributes as optional, for 
 
 Use a new line for every block-level element. If they are children of other block-level elements, they should be indented.
 
-It is acceptable for `* ` elements to be placed all on one line if the whitespace around them causes display issues (typically seen in horizontal layouts with `display: inline-block;`).
+It is acceptable for `<li>` elements to be placed all on one line if the whitespace around them causes display issues (typically seen in horizontal layouts with `display: inline-block;`).
 
 ### Protocol-Relative URLs ###
 

@@ -114,27 +114,13 @@
                     <article id="page" class="page">
     <h1>CSS</h1>
     <div class="page-content"><p>The second component of a web page is the presentation information contained in the Cascading Style Sheet (CSS.) Web browsers successful implementation of CSS has given a whole generation of web authors site-wide control over the look and feel of their web sites.</p>
-<p>Just as the information on a web page is semantically described in the HTML Markup, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page&#39;s layout and visual characteristics through the layering of style rules (the &quot;cascade&quot;).</p>
-<p>Many of our CSS rules are drawn from the default rules for <a href="http://csslint.net/">CSS Lint</a>. These are a collection of best practices from people who have built very large modular web applications. We have augmented them with other Fidelity-specific recommendations.</p>
+<p>Just as the information on a web page is semantically described in the HTML markup, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page&#39;s layout and visual characteristics through the layering of style rules (the &quot;cascade&quot;).</p>
+<p>Many of our CSS rules are drawn from the default rules for <a href="http://csslint.net/">CSS Lint</a>. These are a collection of best practices from people who have built very large modular web applications. We have augmented them with additional recommendations.</p>
 <h2>Files and Placement</h2>
 <p>Your CSS should be in external files, linked to from the HEAD of the document using <code>&lt;link&gt;</code> elements (not @import rules).</p>
-<h2>Component Architecture</h2>
-<p>Components are independent, modular pieces of a web page that fit within page layouts.  We use a CSS architecture to style components in a way that prevents style conflicts, encourages code re-use, and enables responsive design.</p>
-<h3>Class Names</h3>
-<p>Each component will have a name listed in its entry in the style guide, and this name will be attached to the component&#39;s root element as a class name using a lowercase, hyphen delimited name (e.g., <code>.component-name</code>).</p>
-<p>Sub-elements within each component can also be given a name which will be attached to the sub-element as a class name appended to the component name, with the two names seperated by a double hyphen (e.g., <code>.component-name--sub-element-name</code>).</p>
-<h3>Selectors</h3>
-<p>Class selectors are generally preferred.  These are selectors which target all elements with a specific class.</p>
-<p>ID selectors should always be avoided</p>
-<p>Element selectors should be generally avoided, but are permissible when selecting a sub-element of a component when all of the following conditions are true:</p>
-<ul>
-<li>The sub-element to be selected is a semantic element (i.e., not a div element or a span element)</li>
-<li>The sub-element to be selected has as its immediate parent an element which has a sub-element specific class</li>
-<li>The child selector is used between the classed parent and the semantic sub-element (e.g., <code>.component-name p</code> or <code>.component-name--sub-element a</code>)</li>
-</ul>
 <h2>Resets</h2>
 <p>Reset files allow more consistent styling across browsers. Solutions range from the more invasive to the looser, depending on how much of the browser defaults to come through.</p>
-<p>We generally recommend normalize.css, which ships with the HTML5 Boilerplate, and offers sensible defaults.</p>
+<p>We generally recommend normalize.css, which ships with the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, and offers sensible defaults.</p>
 <h2>Formatting</h2>
 <p>CSS selectors should each be on their own line. Each property should also be on its own line, and indented, like so:</p>
 <pre class="highlighted"><code class="css"><span class="class">.my-selector</span> <span class="rules">{
@@ -149,10 +135,10 @@
 <h2>Hacks</h2>
 <p>In the long history of CSS, several &quot;hacks&quot; were discovered that selectively loaded styles in certain browsers. These include the &quot;star hack&quot; and the &quot;underscore hack&quot; to load styles only into IE &lt; 8 and IE &lt; 7, respectively. The usage of such hacks is considered bad practice, and should not be used. Instead, use IE conditional comments to load over-riding styles for those browsers.</p>
 <h2>!important</h2>
-<p>The occasional use of <code>!important</code> can be necessary; for example, when overriding a third-party widget (such as Twitter or Disqus) that dynamically loads in its own !important styles. Outside of this example, however, the <code>!important</code> declaration is usually a sign of poorly-formed CSS. When backed into using the <code>!important</code> declaration, it is likely more advantageous for you to refactor your CSS immediately than to use it.</p>
+<p>The occasional use of <code>!important</code> can be necessary; for example, when overriding a third-party widget (such as <a href="http://dev.twitter.com/">Twitter</a> or <a href="http://disqus.com/">Disqus</a>) that dynamically loads in its own !important styles. Outside of this example, however, the <code>!important</code> declaration is usually a sign of poorly-formed CSS. When backed into using the <code>!important</code> declaration, it is likely more advantageous for you to refactor your CSS immediately than to use it.</p>
 <h2>Vendor Prefixes</h2>
 <p>Experimental CSS properties often require vendor prefixes to work in certain browsers. While browser vendors such as Chrome are working as quickly as possible to support these properties without the prefix, they remain an important part of writing CSS.</p>
-<p>Some developers only use the -webkit prefix on experimental properties. As this excludes the sizable population that uses a Mozilla, Opera, or Microsoft browser engine, we should use all vendor prefixes required by a property. Additionally, don&#39;t forget to use the non-prefixed property, which will future-proof your site for when browsers drop the prefix.</p>
+<p>Some developers only use the -webkit prefix on experimental properties. As this excludes the sizable population that uses a Mozilla, Presto, or Microsoft browser engine, we should use all vendor prefixes required by a property. Additionally, don&#39;t forget to use the non-prefixed property, which will future-proof your site for when browsers drop the prefix.</p>
 <p>Luckily for us, if we use SASS with Compass, the pre-made <a href="http://compass-style.org/reference/compass/css3/">Compass CSS3 prefixes mixin</a> will take care of this for us.</p>
 <h2>Accessibility</h2>
 <p>We mention accessibility a few times in this document, but here are some additional considerations.</p>
@@ -203,11 +189,11 @@
 <h2>Inefficient Selectors</h2>
 <p>For the most part, we aren&#39;t overly concerned with selector performance. There are many other ways a page can be slow, such as overloading images or web fonts, but there are some selectors to watch out for.</p>
 <h3>RegEx Selectors</h3>
-<p>There are some selectors that utilize a regular expression when being applied to the page, and are significantly slower than other selectors. For the most part, these are used when matching attributes such as:</p>
-<pre class="highlighted"><code class="css"><span class="tag">a</span><span class="attr_selector">[href*=fidelity.com]</span> <span class="rules">{
+<p>Some selectors utilize a regular expression when being applied to the page, and are significantly slower than other selectors. For the most part, these are used when matching attributes such as:</p>
+<pre class="highlighted"><code class="css"><span class="tag">a</span><span class="attr_selector">[href*=github.com]</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> green;</span></span>
 <span class="rule">}</span></span></code></pre>
-<p>The list of selectors to avoid is as follows:</p>
+<p>Selectors to avoid include:</p>
 <ul>
 <li><code>*=</code></li>
 <li><code>|=</code></li>
@@ -342,9 +328,9 @@
 
         </section>
         <footer>
-            <p>&copy; FMR LLC 2013</p>
+            <p>&copy; Bob Holt 2013</p>
             <p style="float:right;">
-                This website was last updated at 2013-02-13T01:50:29.210Z
+                This website was last updated at 2013-02-13T14:35:33.362Z
             </p>
         </footer>
     </div><!-- /container -->

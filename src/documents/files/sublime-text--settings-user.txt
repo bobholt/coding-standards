@@ -1,0 +1,94 @@
+{
+    "jshint_options": // As of 12 Feb 2013
+
+    {
+        // Enforcing Options
+        "bitwise"       : true,     // Prohibits bitwise operators
+        "camelcase"     : true,     // Forces camelCase or UPPER_CASE variable names
+        "curly"         : true,     // Requires curly braces around blocks
+        "eqeqeq"        : true,     // Forces strict equality checks
+        "forin"         : true,     // Requires own property checks in `for-in` loops
+        "immed"         : true,     // Requires IIFEs to be wrapped in parentheses
+        "indent"        : 4,        // Enforces a specific tab width (may not work?)
+        "latedef"       : true,     // Requires defining a variable before using it
+        "newcap"        : true,     // Requires constructor functions to be capitalized
+        "noarg"         : true,     // Prohibits `arguments.caller` and `arguments.callee`
+        "noempty"       : true,     // Warns about empty code blocks (useless code)
+        "nonew"         : true,     // Prohibits using constructors for side-effects
+        "plusplus"      : false,    // Prohibits increment and decrement (`++` and `--`) - DISABLED
+        "quotmark"      : "single", // Forces single quotes for strings
+        "regexp"        : true,     // Prohibits the unsafe `.` selector in regular expressions
+        "undef"         : true,     // Prohibits using explicitly undeclared variables
+        "unused"        : true,     // Warns on unused variables
+        "strict"        : true,     // Forces strict mode in functional scope
+        "trailing"      : true,     // Makes trailing whitespace an error
+        // "maxparams"     : 4,        // Sets the maximum number of arguments allowed in a function
+        "maxdepth"      : 3,        // Sets the maximum number of nested blocks
+        "maxstatements" : 30,       // Sets the maximum number of statements allowed in a function
+        "maxcomplexity" : 10,       // Sets (cyclomatic complexity)[http://en.wikipedia.org/wiki/Cyclomatic_complexity]
+        "maxlen"        : 150,      // Sets the maximum line length
+
+        // Relaxing Options
+        "asi"           : false,    // Allows missing semicolons
+        "boss"          : false,    // Allows using assignment `=` where comparison `===` is expected
+        "debug"         : false,    // Allows `debugger` statements
+        "eqnull"        : true,     // Allows `==` when comparing with null - ENABLED
+        "es5"           : false,    // Allows ES5 features which may not be supported in all browsers
+        "esnext"        : false,    // Allows ES6 features which are not yet finalized
+        "evil"          : false,    // Allows the use of `eval()`
+        "expr"          : false,    // Allows the use of expressions where assignments or function calls are expected
+        "funcscope"     : false,    // Allows declaring variables inside controls structures and using them outside
+        "globalstrict"  : false,    // Allows global strict mode, which can break third-party plugins
+        "iterator"      : false,    // Allows using the `__iterator__` property
+        "lastsemic"     : false,    // Allows missing semicolons on the last statement in a one-line block
+        "laxbreak"      : false,    // Allows potentially-unsafe line breaks
+        "laxcomma"      : false,    // Allows comma-first coding style
+        "loopfunc"      : false,    // Allows function definition inside loops
+        "multistr"      : false,    // Allows multi-line strings
+        "onecase"       : false,    // Allows single-case switches. There is a use case for this, and may be enabled in the future.
+        "proto"         : false,    // Allows using the `__proto__` property
+        "regexdash"     : false,    // Allows unescaped `-` at the end of regular expressions
+        "scripturl"     : false,    // Allows `javascript:` urls
+        "smarttabs"     : false,    // Allows mixed tabs and spaces
+        "shadow"        : false,    // Allows variable shadowing
+        "sub"           : false,    // Allows `[]` notation when dot notation is available for object properties
+        "supernew"      : false,    // Allows "weird" constructors
+        "validthis"     : false,    // Allows possible strict violations of `this`. Should be enabled on a case-by-case basis.
+
+        // Environments
+        "browser"       : true,     // Pre-defines browser globals such as `document` and `navigator`
+        "couch"         : false,    // Pre-defines CouchDB globals
+        "devel"         : false,    // Pre-defines `console` and `alert` globals
+        "dojo"          : false,    // Pre-defines Dojo globals
+        "jquery"        : true,     // Pre-defines jQuery globals
+        "mootools"      : false,    // Pre-defines MooTools globals
+        "node"          : false,    // Pre-defines Node.js globals
+        "nonstandard"   : false,    // Pre-defines non-standard globals like `escape` and `unescape`
+        "prototypejs"   : false,    // Pre-defines Prototype globals
+        "rhino"         : false,    // Pre-defines Rhino globals
+        "worker"        : false,    // Pre-defines Web Worker globals
+        "wsh"           : false,    // Pre-defines Windows Script Host globals
+        // "yui"           : false,    // Pre-defines YUI globals
+
+        // Legacy
+        // These options are legacy from JSLint. Aside from bug fixes they will not be improved in any way and might be removed at any point.
+        "nomen"         : false,    // Prohibits the dangling `_` in variables
+        "onevar"        : false,    // Forces one `var` statement per function
+        "passfail"      : false,    // Forces JSHint to stop on the first error
+        "white"         : false,    // Checks against Douglas Crockford"s whitespace rules
+
+        // Pre-defined globals
+        "predef"        : [
+            "after",        // Chai BDD Assertions
+            "afterEach",    // Chai BDD Assertions
+            "before",       // Chai BDD Assertions
+            "beforeEach",   // Chai BDD Assertions
+            "define",       // Require.js AMD definition
+            "describe",     // Chai BDD Assertions
+            "expect",       // Chai BDD Assertions
+            "it",           // Chai BDD Assertions
+            "require",      // Require.js AMD definition
+            "sinon"         // Sinon mock/stub/spy framework global
+        ]
+    }
+}
